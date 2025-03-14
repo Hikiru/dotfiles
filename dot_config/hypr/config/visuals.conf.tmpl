@@ -36,7 +36,7 @@ decoration {
     inactive_opacity = 1.0
 
     shadow {
-    	{{ if eq .chezmoi.hostname "arch-ideapad }}
+    	{{ if eq .chezmoi.hostname "arch-ideapad" }}
         enabled = false
 	{{ else }}
 	enabled = true
@@ -48,7 +48,7 @@ decoration {
 
     # https://wiki.hyprland.org/Configuring/Variables/#blur
     blur {
-    	{{ if eq .chezmoi.hostname "arch-ideapad }}
+    	{{ if eq .chezmoi.hostname "arch-ideapad" }}
         enabled = false
 	{{ else }}
 	enabled = true
