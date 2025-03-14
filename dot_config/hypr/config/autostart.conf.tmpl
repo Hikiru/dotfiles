@@ -2,6 +2,7 @@
 ### AUTOSTART ###
 #################
 
+# applications
 exec-once = waybar
 exec-once = [workspace 1 silent] zen-browser
 exec-once = systemctl --user start hyprpolkitagent
@@ -12,3 +13,6 @@ exec-once = windscribe
 exec-once = discord
 exec-once = steam
 {{- end }}
+
+# commands
+exec-once = hyprpm reload
