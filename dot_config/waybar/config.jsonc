@@ -23,7 +23,9 @@
     "clock#simpleclock",
     "tray",
     "custom/notification",
+    {{- if eq .chezmoi.hostname "arch-ideapad" }}
     "battery",
+    {{- end }}
     "custom/power",
   ],
 
