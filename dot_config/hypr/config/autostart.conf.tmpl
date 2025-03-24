@@ -6,9 +6,11 @@
 exec-once = waybar
 exec-once = [workspace 1 silent] zen-browser
 exec-once = systemctl --user start hyprpolkitagent
-exec-once = swww-daemon
+exec-once = sleep 1 && swww-daemon
+exec-once = nm-applet
+exec-once = blueman-applet
 {{- if eq .chezmoi.hostname "arch-ideapad" }}
-exec-once = /opt/windscribe/Windscribe %F
+exec-once = sleep 3 && /opt/windscribe/Windscribe %F
 {{- else if eq .chezmoi.hostname "arch-desktop" }}
 exec-once = discord
 exec-once = steam
@@ -16,4 +18,4 @@ exec-once = steam
 
 # commands
 exec-once = hyprpm reload
-exec-once = gsettings set  org.gnome.desktop.interface cursor-theme 'Adwaita'
+exec-once = gsettings set org.gnome.desktop.interface cursor-theme Adwaita
