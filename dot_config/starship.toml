@@ -4,12 +4,12 @@ format = """
 [ ](red)\
 $os\
 $username\
-[](bg:yellow fg:red)\
+[](bg:yellow fg:red)\
 $directory\
-[](fg:yellow bg:cyan)\
+[](fg:yellow bg:cyan)\
 $git_branch\
 $git_status\
-[](fg:cyan bg:blue)\
+[](fg:cyan bg:blue)\
 $c\
 $rust\
 $golang\
@@ -19,13 +19,14 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:blue bg:white)\
+[](fg:blue bg:white)\
 $docker_context\
 $conda\
-[](fg:white bg:black)\
+[](fg:white bg:black)\
 $time\
 [ ](fg:black)\
-$line_break$character"""
+$line_break$character
+"""
 
 [os]
 disabled = false
@@ -147,8 +148,8 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:green)'
-error_symbol = '[](bold fg:red)'
+success_symbol = '[  󱞩](bold fg:green)'
+error_symbol = '[  󱞩](bold fg:red)'
 vimcmd_symbol = '[](bold fg:green)'
 vimcmd_replace_one_symbol = '[](bold fg:purple)'
 vimcmd_replace_symbol = '[](bold fg:purple)'
