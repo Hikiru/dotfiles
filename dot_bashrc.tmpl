@@ -10,6 +10,7 @@ alias grep='grep --color=auto'
 alias pacin='sudo pacman -S'
 alias pacr='sudo pacman -Rs'
 alias hyprexec='hyprctl dispatch exec'
+alias wallfix='swww kill && hyprexec swww-daemon && sleep 0.01 && waypaper --restore'
 
 PS1='[\u@\h \W]\$ '
 
