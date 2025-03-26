@@ -11,6 +11,7 @@ exec-once = nm-applet
 exec-once = blueman-applet
 {{- if eq .chezmoi.hostname "arch-ideapad" }}
 exec-once = sleep 3 && /opt/windscribe/Windscribe %F
+exec-once = iio-hyprland
 {{- else if eq .chezmoi.hostname "arch-desktop" }}
 exec-once = discord
 exec-once = steam
