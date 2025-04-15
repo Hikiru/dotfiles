@@ -77,56 +77,56 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:cyan"
-format = '[[ $symbol $branch ](fg:white bg:cyan)]($style)'
+format = '[[ $symbol $branch ](fg:black bg:cyan)]($style)'
 
 [git_status]
 style = "bg:cyan"
-format = '[[($all_status$ahead_behind )](fg:white bg:cyan)]($style)'
+format = '[[($all_status$ahead_behind )](fg:black bg:cyan)]($style)'
 
 [nodejs]
 symbol = ""
 style = "bg:blue"
-format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
 [c]
 symbol = " "
 style = "bg:blue"
-format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
 [rust]
 symbol = ""
 style = "bg:blue"
-format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
 [golang]
 symbol = ""
 style = "bg:blue"
-format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
 [php]
 symbol = ""
 style = "bg:blue"
-format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
 [java]
 symbol = ""
 style = "bg:blue"
-format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
 [kotlin]
 symbol = ""
 style = "bg:blue"
-format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
 [haskell]
 symbol = ""
 style = "bg:blue"
-format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
 [python]
 symbol = ""
 style = "bg:blue"
-format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+format = '[[ $symbol( $version) ](fg:black bg:blue)]($style)'
 
 [docker_context]
 symbol = ""
