@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Function to create user with password and sudo privileges
 create_sudo_user() {
     # Get username
     read -p "Enter username: " username
