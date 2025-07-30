@@ -1,3 +1,5 @@
+/* https://davatorium.github.io/rofi/current/rofi.1/ */
+
 @import "~/.cache/wal/colors-rofi-dark"
 
 configuration {
