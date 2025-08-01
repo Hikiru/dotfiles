@@ -25,15 +25,17 @@ packages=(
     # DE Stuff
     rofi-wayland
     waybar
+    wlogout
     swww
     swaync
     greetd-tuigreet
+    network-manager-applet
     # Text editors
     neovim
     nano
     # File managers
     thunar
-    dolphin
+    gvfs # thunar dependancy
     yazi
     # GUI config
     qt5ct
@@ -43,6 +45,7 @@ packages=(
     # == EXTRAS ==
     steam
     discord
+    flatpak
 )
 
 # == AUR ==
@@ -51,6 +54,7 @@ aur_packages=(
     zen-browser-bin
     visual-studio-code-bin
     waypaper
+    wlogout
 )
 
 # install packages

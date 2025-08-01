@@ -28,8 +28,8 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  background-color: @color0;
-  color: @cursor;
+  background-color: @foreground;
+  color: @background;
 }
 
 #workspaces button.active {
