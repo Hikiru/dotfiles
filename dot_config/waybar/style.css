@@ -1,5 +1,7 @@
 @import '../../.cache/wal/colors-waybar.css';
 
+all: unset
+
 * {
   min-height: 0;
   min-width: 0;
