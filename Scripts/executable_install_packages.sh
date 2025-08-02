@@ -41,11 +41,13 @@ packages=(
     qt5ct
     qt6ct
     nwg-look
+    # Misc
+    flatpak
+    man-db
 
     # == EXTRAS ==
     steam
     discord
-    flatpak
 )
 
 # == AUR ==
