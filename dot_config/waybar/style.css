@@ -30,6 +30,7 @@ window#waybar {
 #workspaces button:hover {
   /* background-color: #ffffff; */
   /* color: @background; */
+  padding: 0.3rem 0.6rem;
   background: @cursor;
   border: transparent;
   box-shadow: inherit;
