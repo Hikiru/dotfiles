@@ -34,6 +34,7 @@ window#waybar {
   border: transparent;
   box-shadow: inherit;
   text-shadow: inherit;
+  cursor: pointer;
 }
 
 #workspaces button.active {
