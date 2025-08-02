@@ -30,6 +30,8 @@ window#waybar {
 #workspaces button:hover {
   background-color: @color0;
   color: @background;
+  box-shadow: inherit;
+  text-shadow: inherit;
 }
 
 #workspaces button.active {
