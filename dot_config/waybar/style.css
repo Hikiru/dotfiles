@@ -28,8 +28,10 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  background-color: @color0;
-  color: @background;
+  /* background-color: #ffffff; */
+  /* color: @background; */
+  background: @cursor;
+  border: transparent;
   box-shadow: inherit;
   text-shadow: inherit;
 }
