@@ -18,7 +18,7 @@
   "modules-right": [
     "cpu",
     "memory",
-    "pipewire",
+    "pulseaudio",
     "clock",
     "clock#simpleclock",
     "tray",
@@ -77,7 +77,7 @@
   "memory": {
     "format": " {used:0.1f}Gi",
   },
-  "pipewire": {
+  "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "  muted",
     "format-icons": {
