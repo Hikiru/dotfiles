@@ -1,7 +1,5 @@
 @import '../../.cache/wal/colors-waybar.css';
 
-all: unset
-
 * {
   min-height: 0;
   min-width: 0;
@@ -30,7 +28,7 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  background-color: @foreground;
+  background-color: @color0;
   color: @background;
 }
 
