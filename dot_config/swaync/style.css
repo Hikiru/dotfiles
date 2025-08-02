@@ -28,7 +28,7 @@
 
 .notification-row .notification-background .close-button:hover {
   box-shadow: none;
-  background: transparent;
+  background: @color9;
   transition: background 0.15s ease-in-out;
   border: none;
 }
