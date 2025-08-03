@@ -13,6 +13,7 @@ alias pacr='sudo pacman -Rs'
 alias hyprexec='hyprctl dispatch exec'
 alias wallfix='swww kill && hyprexec swww-daemon && sleep 0.01 && waypaper --restore'
 alias sunvim='sudo -E nvim'
+alias windows='sudo grub-reboot "Windows Boot Manager (on /dev/nvme0n1p1" && systemctl reboot'
 
 PS1='[\u@\h \W]\$ '
 
