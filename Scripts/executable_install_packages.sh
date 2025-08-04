@@ -48,6 +48,7 @@ packages=(
     # == EXTRAS ==
     steam
     discord
+    obs-studio
 )
 
 # == AUR ==
