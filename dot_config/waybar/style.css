@@ -22,15 +22,11 @@ window#waybar {
   padding: 0.3rem 0.6rem;
   margin: 0.0rem 0.2rem;
   border-radius: 8px;
-  /* background-color: #181825; */
   background-color: @background;
   color: @foreground;
 }
 
 #workspaces button:hover {
-  /* background-color: #ffffff; */
-  /* color: @background; */
-  padding: 0.3rem 0.6rem;
   background: @cursor;
   border: transparent;
   box-shadow: inherit;
