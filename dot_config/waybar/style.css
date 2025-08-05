@@ -12,9 +12,6 @@
 window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
-  /* background-color: #1e1e2e; */
-  /* background-color: #181825; */
-  /* background-color: @background; */
   background-color: transparent;
 }
 
@@ -22,11 +19,13 @@ window#waybar {
   padding: 0.3rem 0.6rem;
   margin: 0.0rem 0.2rem;
   border-radius: 8px;
+  border: transparent;
   background-color: @background;
   color: @foreground;
 }
 
 #workspaces button:hover {
+  padding: 0.3rem 0.6rem;
   background: @cursor;
   border: transparent;
   box-shadow: inherit;
@@ -40,7 +39,7 @@ window#waybar {
 
 #workspaces button.urgent {
   background-color: @background;
-  color: #f38ba8;
+  color: @color1;
 }
 
 #clock,
@@ -63,11 +62,11 @@ window#waybar {
 }
 
 #mpris.playing {
-  color: #a6e3a1;
+  color: @color6;
 }
 
 #mpris.paused {
-  color: #9399b2;
+  color: @color8;
 }
 
 #custom-sep {

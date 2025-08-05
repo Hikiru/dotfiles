@@ -1,13 +1,10 @@
 {
   "layer": "bottom",
   "position": "top",
+  "output": "!sunshine",
   "height": 0,
   "spacing": 2,
   "margin": 5,
-/*   "margin-top": 1,
-  "margin-bottom": 4,
-  "margin-left": 4,
-  "margin-right": 4, */
   "reload_style_on_change": true,
   "exclusive": true,
   "gtk-layer-shell": true,
@@ -40,22 +37,24 @@
        }
   },
   "hyprland/window": {
+    "max-length": 50,
     "format": "{title}",
   },
 
     ////////////////////
    // center modules //
   ////////////////////
-  "custom/spotify": {
-    "format": "  {}",
-    "return-type": "json",
-    "on-click": "playerctl -p spotify play-pause",
-    "on-click-right": "spotifatius toggle-liked",
-    "on-click-middle": "playerctl -p spotify next",
-    "exec": "spotifatius monitor",
-  },
+  // "custom/YoutubeMusic": {
+  //   "format": "{}",
+  //   "return-type": "json",
+  //   // "on-click": "playerctl -p YoutubeMusic play-pause",
+  //   "on-click": "~/AppImages/youtube_music.appimage",
+  //   // "on-click-right": "spotifatius toggle-liked",
+  //   "on-click-middle": "playerctl -p YoutubeMusic next",
+  //   // "exec": "spotifatius monitor",
+  // },
   "mpris": {
-    "player": "spotify",
+    "player": "YoutubeMusic",
     "dynamic-order": ["artist", "title"],
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
@@ -63,7 +62,8 @@
       "paused": "",
     },
     "player-icons": {
-      "default": "",
+      "default": "",
+    "on-click": "~/AppImages/youtube_music.appimage",
     },
   },
     ///////////////////
