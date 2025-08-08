@@ -3,7 +3,7 @@
   "position": "top",
   "output": "!sunshine",
   "height": 0,
-  "spacing": 2,
+  "spacing": 0,
   "margin": 5,
   "reload_style_on_change": true,
   "exclusive": true,

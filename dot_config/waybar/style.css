@@ -15,27 +15,38 @@ window#waybar {
   background-color: transparent;
 }
 
-#workspaces button {
+#workspaces button,
+#window,
+#battery,
+#tray,
+#custom-notification,
+#custom-power,
+#mpris {
   padding: 0.3rem 0.6rem;
+  margin: 0.0rem 0.2rem;
+  border-radius: 10px;
+  background-color: @background;
+}
+
+#workspaces button {
   margin: 0;
   border-radius: 0;
   border: transparent;
-  background-color: @background;
   color: @foreground;
 }
 
 #workspaces button:first-child {
   border-radius: 10px 0 0 10px;
+  margin-left: 0.2rem;
 }
 
 #workspaces button:last-child {
   border-radius: 0 10px 10px 0;
+  margin-right: 0.2rem;
 }
 
 #workspaces button:hover {
-  padding: 0.3rem 0.6rem;
   background: @cursor;
-  border: transparent;
   box-shadow: inherit;
   text-shadow: inherit;
 }
@@ -48,25 +59,6 @@ window#waybar {
 #workspaces button.urgent {
   background-color: @background;
   color: @color1;
-}
-
-#clock,
-#pulseaudio,
-#custom-logo,
-#custom-power,
-#custom-spotify,
-#custom-notification,
-#battery,
-#cpu,
-#tray,
-#memory,
-#window,
-#mpris {
-  padding: 0.3rem 0.6rem;
-  margin: 0.0rem 0.2rem;
-  border-radius: 10px;
-  /* background-color: #181825; */
-  background-color: @background;
 }
 
 #mpris.playing {
@@ -86,8 +78,19 @@ window#waybar.empty #window {
   background-color: transparent;
 }
 
+#cpu,
+#memory,
+#pulseaudio,
+#clock {
+  padding: 0.3rem 0.6rem;
+  border-radius: 0;
+  background-color: @background;
+}
+
 #cpu {
   color: @color1;
+  border-radius: 10px 0 0 10px;
+  margin-left: 0.2rem;
 }
 
 #memory {
@@ -95,11 +98,11 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
-color: @color3;
+  color: @color3;
 }
 
 #pulseaudio.muted {
-color: @color1;
+  color: @color1;
 }
 
 #clock {
@@ -108,6 +111,8 @@ color: @color1;
 
 #clock.simpleclock {
   color: @color5;
+  border-radius: 0 10px 10px 0;
+  margin-right: 0.2rem;
 }
 
 #window {
@@ -132,5 +137,5 @@ color: @color1;
 
 tooltip {
   background-color: @background;
-  border: 2px solid #89b4fa;
+  border: 2px solid @color5;
 }
