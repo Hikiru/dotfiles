@@ -3,6 +3,20 @@
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
 
+environment {
+    DISPLAY ":0"
+    GDK_SCALE "1.25"
+    QT_QPA_PLATFORMTHEME "qt5ct"
+    QT_QPA_pLATFORMTHEME_QT6 "qt6ct"
+    EDITOR "helix"
+    STEAM_FORCE_DESKTOPUI_SCALING "1.3"
+}
+
+cursor {
+    xcursor-theme "BreezeX-RosePine-Linux"
+    xcursor-size 30
+}
+
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
@@ -38,7 +52,7 @@ input {
     }
 
     mouse {
-        // off
+        // ofotoogoyolhogyotoitu5yjthjthryu6t6iuotifuhyhfgf
         // natural-scroll
         // accel-speed 0.2
         accel-profile "flat"
@@ -60,7 +74,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse max-scroll-amount="30%"
+    focus-follows-mouse max-scroll-amount="40%"
 }
 
 // You can configure outputs by their name, which you can find
@@ -105,7 +119,7 @@ output "DP-1" {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 8
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -150,10 +164,10 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-        // off
+        off
 
         // How many logical pixels the ring extends out from the windows.
-        width 4
+        width 2
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -186,10 +200,10 @@ layout {
     border {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
-        off
+        // off
 
-        width 4
-        active-color "#ffc87f"
+        width 2
+        active-color "#c4a7e7"
         inactive-color "#505050"
 
         // Color of the border around windows that request your attention.
@@ -249,20 +263,12 @@ layout {
     }
 }
 
-// Add lines like this to spawn processes at startup.
-// Note that running niri as a session supports xdg-desktop-autostart,
-// which may be more convenient to use.
-// See the binds section below for more spawn examples.
+// spawn-at-startup "waybar"
+spawn-at-startup "qs" "-c" "DankMaterialShell"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "sleep" "0.5" "&&" "xsettingsd"
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
-
-// Uncomment this line to ask the clients to omit their client-side decorations if possible.
-// If the client will specifically ask for CSD, the request will be honored.
-// Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
-// This option will also fix border/focus ring drawing behind some semitransparent windows.
-// After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -302,8 +308,12 @@ window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"zen$"# title="^Picture-in-Picture$"
     open-floating true
+    open-focused true
+    default-floating-position x=7 y=8 relative-to="bottom-right"
+    default-window-height { proportion 0.25; }
+    default-column-width { proportion 0.25; }
 }
 
 // Example: block out two password managers from screen capture.
@@ -320,8 +330,8 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    geometry-corner-radius 12
+window-rule {
+    geometry-corner-radius 10
     clip-to-geometry true
 }
 
@@ -342,8 +352,9 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
+    Mod+R hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+Period { spawn "kitty" "chezmoi" "edit"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -509,13 +520,13 @@ binds {
     Mod+BracketRight { consume-or-expel-window-right; }
 
     // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
+    // Mod+Comma  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
+    // Mod+Period { expel-window-from-column; }
 
-    Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
+    Mod+D { switch-preset-column-width; }
+    Mod+Shift+D { switch-preset-window-height; }
+    Mod+Ctrl+D { reset-window-height; }
     Mod+F { maximize-column; }
     Alt+Return { fullscreen-window; }
 
