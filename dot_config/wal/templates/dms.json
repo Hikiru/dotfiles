@@ -1,0 +1,22 @@
+{{
+  "name": "Pywal",
+  "primary": "{color13}",
+  "primaryText": "{background}",
+  "primaryContainer": "{color12}",
+  "secondary": "{color11}",
+  "surface": "{background}",
+  "surfaceText": "{color13}",
+  "surfaceVariant": "{color0}",
+  "surfaceVariantText": "{color8}",
+  "surfaceTint": "{color13}",
+  "background": "{background}",
+  "backgroundText": "{foreground}",
+  "outline": "{color8}",
+  "surfaceContainer": "{color0}",
+  "surfaceContainerHigh": "{cursor}",
+  "surfaceContainerHighest": "{color8}",
+  "error": "{color9}",
+  "warning": "{color11}",
+  "info": "{color12}",
+  "matugen_type": "scheme-expressive"
+}}
