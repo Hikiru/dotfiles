@@ -143,12 +143,12 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"zen$"# title="^Picture-in-Picture$"
+    match app-id=r#"zen.*$"# title="^Picture-in-Picture$"
     open-floating true
     open-focused true
     default-floating-position x=7 y=8 relative-to="bottom-right"
-    default-window-height { proportion 0.25; }
-    default-column-width { proportion 0.25; }
+    default-column-width { fixed 480; }
+    default-window-height { fixed 270; }
 }
 
 // Example: block out two password managers from screen capture.
@@ -166,10 +166,10 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Mod+Period { spawn "kitty" "-d" "~/.local/share/chezmoi" "-e" "nvim"; }
+    Mod+Q hotkey-overlay-title="Terminal" { spawn "kitty"; }
+    Mod+D hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Super+Alt+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Mod+Period hotkey-overlay-title="Edit Config" { spawn "kitty" "-d" "~/.local/share/chezmoi" "-e" "chezmoi" "edit"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
