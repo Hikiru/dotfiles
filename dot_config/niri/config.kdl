@@ -2,8 +2,9 @@
 
 // spawn-at-startup "waybar"
 spawn-at-startup "dms" "run"
-spawn-at-startup "bash" "-c" "sleep 1 && pkill .nm-applet-wrap" // nm-applet is forcing itself on me and i don't know why
 spawn-at-startup "xsettingsd"
+spawn-sh-at-startup "sleep 1 && pkill .nm-applet-wrap" // nm-applet is forcing itself on me and i don't know why
+spawn-sh-at-startup "wl-paste --watch cliphist store &"
 
 input {
     keyboard {
@@ -27,7 +28,7 @@ output "DP-1" {
     mode "2560x1440"
     scale 1.3
     transform "normal"
-    position x=1280 y=0
+    position x=0 y=0
 }
 
 output "eDP-1" {
@@ -113,6 +114,8 @@ layout {
     }
 }
 
+// Window rules
+
 window-rule {
     geometry-corner-radius 10
     clip-to-geometry true
@@ -148,6 +151,12 @@ window-rule {
     default-window-height { fixed 270; }
 }
 
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -159,6 +168,8 @@ window-rule {
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
 }
+
+// Layer rules
 
 layer-rule {
     match namespace="dms:wallpaper"
@@ -198,8 +209,8 @@ binds {
     Mod+C { close-window; }
 
     Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
+    Mod+Down  { focus-window-or-workspace-down; }
+    Mod+Up    { focus-window-or-workspace-up; }
     Mod+Right { focus-column-right; }
     Mod+H     { focus-column-left; }
     Mod+J     { focus-window-or-workspace-down; }
