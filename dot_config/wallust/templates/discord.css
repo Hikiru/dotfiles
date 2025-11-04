@@ -86,7 +86,7 @@ body {
     /* background and dark colors */
     --bg-1: {{background | lighten(0.1)}}; /* dark buttons when clicked */
     --bg-2: {{background | lighten(0.06)}}; /* dark buttons */
-    --bg-3: {{background | lighten(0.03)}}; /* spacing, secondary elements */
+    --bg-3: {{background | lighten(0.03) | saturate(0.03)}}; /* spacing, secondary elements */
     --bg-4: {{background}}; /* main background color */
     --hover: {{color0}}; /* channels and buttons when hovered */
     --active: {{color0 | lighten(0.03)}}; /* channels and buttons when clicked or selected */

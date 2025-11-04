@@ -35,14 +35,14 @@
         "text.muted": "{{foreground | darken(0.2)}}",
         "text.placeholder": "{{foreground | darken(0.3)}}",
         "text.disabled": "{{foreground | darken(0.4)}}",
-        "text.accent": "{{color4}}",
+        "text.accent": "{{cursor}}",
 
         // Icon colors - match text hierarchy
         "icon": "{{foreground}}",
         "icon.muted": "{{foreground | darken(0.2)}}",
         "icon.disabled": "{{foreground | darken(0.4)}}",
         "icon.placeholder": "{{foreground | darken(0.3)}}",
-        "icon.accent": "{{color4}}",
+        "icon.accent": "{{cursor}}",
 
         // Border colors - subtle but visible
         "border": "{{foreground | darken(0.6)}}",
@@ -97,7 +97,7 @@
         "editor.foreground": "{{foreground}}",
         "editor.gutter.background": "{{background}}",
         "editor.subheader.background": "{{background | lighten(0.05)}}",
-        "editor.active_line.background": "{{background | blend(foreground) | darken(0.8)}}",
+        "editor.active_line.background": "{{color8}}",
         "editor.highlighted_line.background": "{{background | blend(color3) | darken(0.6)}}",
         "editor.line_number": "{{foreground | darken(0.4)}}",
         "editor.active_line_number": "{{foreground}}",
