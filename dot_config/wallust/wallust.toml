@@ -37,3 +37,5 @@ qt5ct = { template = 'qtct.conf', target = '~/.config/qt5ct/colors/wallust.conf'
 qt6ct = { template = 'qtct.conf', target = '~/.config/qt6ct/colors/wallust.conf' }
 discord = { template = 'discord.css', target = '~/.config/Vencord/themes/wallust.css'}
 vesktop = { template = 'discord.css', target = '~/.config/vesktop/themes/wallust.css'}
+zen-user-chrome = { template = 'zen-user-chrome.css', target = '~/.zen/default/chrome/userChrome.css'}
+zen-user-content = { template = 'zen-user-content.css', target = '~/.zen/default/chrome/userContent.css'}

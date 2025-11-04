@@ -1,0 +1,156 @@
+/* Common variables affecting all pages */
+@-moz-document url-prefix("about:") {
+  :root {
+    --in-content-page-color: {{foreground}} !important;
+    --color-accent-primary: {{cursor}} !important;
+    --color-accent-primary-hover: {{cursor}} !important;
+    --color-accent-primary-active: {{cursor}} !important;
+    background-color: {{background}} !important;
+    --in-content-page-background: {{background}} !important;
+  }
+}
+
+/* Variables and styles specific to about:newtab and about:home */
+@-moz-document url("about:newtab"), url("about:home") {
+
+  :root {
+    --newtab-background-color: {{background}} !important;
+    --newtab-background-color-secondary: {{color8}} !important;
+    --newtab-element-hover-color: {{color8}} !important;
+    --newtab-text-primary-color: {{foreground}} !important;
+    --newtab-wordmark-color: {{foreground}} !important;
+    --newtab-primary-action-background: {{cursor}} !important;
+  }
+
+  .icon {
+    color: {{color13}} !important;
+  }
+
+  .search-wrapper .logo-and-wordmark .logo {
+    display: inline-block !important;
+    height: 82px !important;
+    width: 82px !important;
+    background-size: 82px !important;
+  }
+
+  @media (max-width: 609px) {
+    .search-wrapper .logo-and-wordmark .logo {
+      background-size: 64px !important;
+      height: 64px !important;
+      width: 64px !important;
+    }
+  }
+
+  .card-outer:is(:hover, :focus, .active):not(.placeholder) .card-title {
+    color: {{color13}} !important;
+  }
+
+  .top-site-outer .search-topsite {
+    background-color: {{color13}} !important;
+  }
+
+  .compact-cards .card-outer .card-context .card-context-icon.icon-download {
+    fill: {{color12}} !important;
+  }
+}
+
+/* Variables and styles specific to about:preferences */
+@-moz-document url-prefix("about:preferences") {
+  :root {
+    --zen-colors-tertiary: {{color0}} !important;
+    --in-content-text-color: {{foreground}} !important;
+    --link-color: {{color6}} !important;
+    --link-color-hover: {{color6}} !important;
+    --zen-colors-primary: {{color8}} !important;
+    --in-content-box-background: {{color8}} !important;
+    --zen-primary-color: {{cursor}} !important;
+  }
+
+  groupbox , moz-card{
+    background: {{background}} !important;
+  }
+
+  button,
+  groupbox menulist {
+    background: {{color8}} !important;
+    color: {{foreground}} !important;
+  }
+
+  .main-content {
+    background-color: {{background}} !important;
+  }
+
+  .identity-color-blue {
+    --identity-tab-color: {{cursor}} !important;
+    --identity-icon-color: {{cursor}} !important;
+  }
+
+  .identity-color-turquoise {
+    --identity-tab-color: {{color14}} !important;
+    --identity-icon-color: {{color14}} !important;
+  }
+
+  .identity-color-green {
+    --identity-tab-color: {{color12}} !important;
+    --identity-icon-color: {{color12}} !important;
+  }
+
+  .identity-color-yellow {
+    --identity-tab-color: {{color11}} !important;
+    --identity-icon-color: {{color11}} !important;
+  }
+
+  .identity-color-orange {
+    --identity-tab-color: {{color10}} !important;
+    --identity-icon-color: {{color10}} !important;
+  }
+
+  .identity-color-red {
+    --identity-tab-color: {{color1}} !important;
+    --identity-icon-color: {{color1}} !important;
+  }
+
+  .identity-color-pink {
+    --identity-tab-color: {{color2}} !important;
+    --identity-icon-color: {{color2}} !important;
+  }
+
+  .identity-color-purple {
+    --identity-tab-color: {{color15}} !important;
+    --identity-icon-color: {{color15}} !important;
+  }
+}
+
+/* Variables and styles specific to about:addons */
+@-moz-document url-prefix("about:addons") {
+  :root {
+    --zen-dark-color-mix-base: {{color0}} !important;
+    --background-color-box: {{background}} !important;
+  }
+  #sidebar {
+    background-color: {{color0}};
+  }
+  .sticky-container {
+    --background-color-canvas: {{background}} !important;
+  }
+}
+
+/* Variables and styles specific to about:protections */
+@-moz-document url-prefix("about:protections") {
+  :root {
+    --zen-primary-color: {{background}} !important;
+    --social-color: {{color2}} !important;
+    --coockie-color: {{color13}} !important;
+    --fingerprinter-color: {{color11}} !important;
+    --cryptominer-color: {{color15}} !important;
+    --tracker-color: {{color12}} !important;
+    --in-content-primary-button-background-hover: {{color7}} !important;
+    --in-content-primary-button-text-color-hover: {{foreground}} !important;
+    --in-content-primary-button-background: {{color7}} !important;
+    --in-content-primary-button-text-color: {{foreground}} !important;
+  }
+
+  .card {
+    background-color: {{color8}} !important;
+  }
+}
