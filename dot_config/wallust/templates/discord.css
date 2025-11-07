@@ -125,11 +125,11 @@ body {
     --red-4: {{color1 | darken(0.06)}};
     --red-5: {{color1 | darken(0.08)}};
 
-    --green-1: {{color6}};
-    --green-2: {{color6 | darken(0.02)}};
-    --green-3: {{color6 | darken(0.04)}};
-    --green-4: {{color6 | darken(0.06)}};
-    --green-5: {{color6 | darken(0.08)}};
+    --green-1: {{color2}};
+    --green-2: {{color2 | darken(0.02)}};
+    --green-3: {{color2 | darken(0.04)}};
+    --green-4: {{color2 | darken(0.06)}};
+    --green-5: {{color2 | darken(0.08)}};
 
     --blue-1: {{color4}};
     --blue-2: {{color4 | darken(0.02)}};
@@ -137,11 +137,11 @@ body {
     --blue-4: {{color4 | darken(0.06)}};
     --blue-5: {{color4 | darken(0.08)}};
 
-    --yellow-1: {{color2}};
-    --yellow-2: {{color2 | darken(0.02)}};
-    --yellow-3: {{color2 | darken(0.04)}};
-    --yellow-4: {{color2 | darken(0.06)}};
-    --yellow-5: {{color2 | darken(0.08)}};
+    --yellow-1: {{color3}};
+    --yellow-2: {{color3 | darken(0.02)}};
+    --yellow-3: {{color3 | darken(0.04)}};
+    --yellow-4: {{color3 | darken(0.06)}};
+    --yellow-5: {{color3 | darken(0.08)}};
 
     --purple-1: {{color5}};
     --purple-2: {{color5 | darken(0.02)}};
