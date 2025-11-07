@@ -8,6 +8,8 @@ spawn-sh-at-startup "sleep 1 && pkill .nm-applet-wrap" // nm-applet is forcing i
 spawn-sh-at-startup "wl-paste --watch cliphist store &"
 
 input {
+    disable-power-key-handling
+
     keyboard {
         numlock
     }
@@ -21,12 +23,12 @@ input {
     }
 
     // warp-mouse-to-focus
-
     focus-follows-mouse max-scroll-amount="40%"
 }
 
 output "DP-1" {
     mode "2560x1440"
+    variable-refresh-rate on-demand=true
     scale 1.3
     transform "normal"
     position x=0 y=0
@@ -69,7 +71,8 @@ layout {
     border {
         // off
         width 2
-        active-color "#c4a7e7"
+        active-color "#c4a7e7" // rose pine
+        // active-color "a9b665" // gruvbox material
         inactive-color "#505050"
         urgent-color "#9b0000"
     }
@@ -99,7 +102,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="zen.*$"
+    match app-id="zen.*$" title="^Zen Browser$"
     open-maximized true
     open-on-workspace "browser"
 }
@@ -133,7 +136,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="steam"
+    match app-id="steam" title="^Steam$"
     open-maximized true
     open-on-workspace "games"
 }
@@ -142,6 +145,11 @@ window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
     default-floating-position x=10 y=10 relative-to="bottom-right"
     open-focused false
+}
+
+window-rule {
+    match app-id="cyberpunk2077"
+    variable-refresh-rate true
 }
 
 // Example: block out two password managers from screen capture.
