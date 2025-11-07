@@ -19,7 +19,7 @@
   },
   "special": {
     "background": "#282828",
-    "cursor": "#a9b665",
-    "foreground": "#d4be98"
+    "foreground": "#d4be98",
+    "cursor": "#a9b665"
   }
 }
