@@ -150,6 +150,7 @@ window-rule {
 
 window-rule {
     match app-id="cyberpunk2077"
+    match title="PEAK"
     variable-refresh-rate true
 }
 
