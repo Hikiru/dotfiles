@@ -12,7 +12,7 @@
   "background": "{{background}}",
   "backgroundText": "{{foreground}}",
   "outline": "{{cursor}}",
-  "surfaceContainer": "{{background | lighten(0.03)}}",
+  "surfaceContainer": "{{color0}}",
   "surfaceContainerHigh": "{{color8}}",
   "surfaceContainerHighest": "{{color8 | lighten(0.1)}}",
   "error": "{{color9}}",

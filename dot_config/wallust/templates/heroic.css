@@ -1,0 +1,72 @@
+body.wallust {
+    --text-default: {{foreground}};
+    --text-secondary: {{color15}};
+    --text-tertiary: {{background}};
+
+    --background: {{background}};
+    --background-darker: {{background | darken(0.05)}};
+    --background-lighter: {{color0}};
+    --body-background: {{background}};
+    --gradient-body-background: {{background}};
+    --input-background: {{color0}};
+    --controller-hints-background: transparent;
+    --current-background: {{background}};
+    --modal-background: {{background | darken(0.1)}};
+    --modal-border: {{cursor}};
+    --osk-background: {{background}};
+    --osk-button-background: {{color0}};
+    --osk-button-border: {{background | darken(0.1)}};
+    --search-bar-background: {{color0}};
+    --search-bar-border: {{color0}};
+
+    --action-icon: {{foreground}};
+    --action-icon-hover: {{color7}};
+    --action-icon-active: {{cursor}};
+    --icons-background: {{background}};
+
+    --brand-primary: {{cursor}};
+    --brand-primary-hover: {{color7}};
+
+    --primary-button: {{cursor}};
+    --primary-button-overlay: {{cursor}};
+    --secondary-button: {{cursor}};
+    --secondary-button-overlay: {{cursor}};
+    --tertiary-button: {{cursor}};
+    --tertiary-button-overlay: {{cursor}};
+    --success-button: {{color2}};
+    --disabled-button: {{background | darken(0.05)}};
+    --disabled-button-overlay: {{background | darken(0.1)}};
+
+    --navbar-active: {{foreground}};
+    --navbar-inactive: {{color15}};
+    --navbar-active-background: {{background}};
+    --navbar-accent: {{cursor}};
+    --navbar-background: {{color0}};
+    --divider: {{color0}};
+
+    --success: {{color2}};
+    --success-hover: {{color7}};
+    --danger: {{color3}};
+    --danger-hover: {{color7}};
+
+    --primary: {{cursor}};
+    --secondary: {{cursor}};
+    --accent: {{cursor}};
+
+    --status-success: {{color2}};
+    --status-warning: {{color3}};
+    --status-danger: {{color1}};
+    --status-info: {{cursor}};
+
+    --neutral-01: {{background | darken(0.1)}};
+    --neutral-02: {{background}};
+    --neutral-03: {{color0}};
+    --neutral-04: {{color7}};
+    --neutral-05: {{color15}};
+    --neutral-06: {{foreground}};
+}
+
+body.wallust select,
+body.wallust input {
+    box-shadow: none !important;
+}
