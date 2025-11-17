@@ -1,14 +1,14 @@
 // https://yalter.github.io/niri/Configuration%3A-Introduction.html
 
 spawn-at-startup "dms" "run"
-spawn-at-startup "xsettingsd"
+// spawn-at-startup "xsettingsd"
 spawn-at-startup "swayidle"
 spawn-sh-at-startup "sleep 1 && pkill .nm-applet-wrap" // nm-applet is forcing itself on me and i don't know why
 spawn-sh-at-startup "wl-paste --watch cliphist store &"
 {{ if eq .chezmoi.hostname "anura" }}
 spawn-at-startup "vesktop"
 spawn-at-startup "steam"
-spawn-at-startup "obs --startreplaybuffer --startminimized"
+// spawn-at-startup "obs" "--startreplaybuffer" "--startminimized" "--disable-shutdown-check"
 {{ end }}
 spawn-at-startup "zen"
 
@@ -46,6 +46,10 @@ output "eDP-1" {
 }
 
 // Style
+
+cursor {
+    xcursor-theme "Adwaita"
+}
 
 window-rule {
     geometry-corner-radius 10
@@ -155,7 +159,7 @@ window-rule {
 
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
-    default-floating-position x=10 y=10 relative-to="bottom-right"
+    default-floating-position x=0 y=0 relative-to="bottom-right"
     open-focused false
 }
 
@@ -199,11 +203,12 @@ workspace "games"
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+    Mod+B { spawn "zen"; }
+    Mod+E { spawn "nautilus"; }
     Mod+Q hotkey-overlay-title="Terminal" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
-    Mod+B { spawn "zen"; }
     Super+Alt+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
-    Mod+Period hotkey-overlay-title="Edit Config" { spawn "kitty" "-d" "~/.local/share/chezmoi" "-e" "chezmoi" "edit"; }
+    Mod+Period hotkey-overlay-title="Edit Config" { spawn "kitty" "-d" "~/.local/share/chezmoi" "-e" "chezmoi" "edit" "--watch" "--apply"; }
     Mod+Shift+S { screenshot; }
     Mod+apostrophe { spawn "kitty" "--hold" "-e" "niri" "msg" "pick-window"; }
 
@@ -322,7 +327,7 @@ binds {
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
-    Mod+Ctrl+F { expand-column-to-available-width; }
+    Mod+Shift+F { expand-column-to-available-width; }
     Alt+Return { fullscreen-window; }
 
     Mod+S { center-column; } // "S" for "senter"
@@ -349,4 +354,8 @@ binds {
     Ctrl+Alt+Delete { quit; }
 
     Mod+Shift+P { power-off-monitors; }
+}
+
+hotkey-overlay {
+    skip-at-startup
 }
