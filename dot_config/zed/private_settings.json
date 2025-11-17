@@ -1,0 +1,29 @@
+{
+  "languages": {
+    "Nix": {
+      "tab_size": 2,
+      "language_servers": ["nixd"]
+    }
+  },
+  "file_types": {
+    "Kdl": ["*.kdl.tmpl"],
+    "Shell Script": ["conf"]
+  },
+  "relative_line_numbers": true,
+  "agent": {
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5"
+    },
+    "model_parameters": []
+  },
+  "show_edit_predictions": false,
+  "buffer_font_family": "CaskaydiaCove Nerd Font",
+  "buffer_font_size": 16.0,
+  "theme": "Wallust",
+  "ui_font_family": "DejaVu Sans",
+  "ui_font_size": 16.0,
+  "vim_mode": true
+}
