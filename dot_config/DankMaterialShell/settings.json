@@ -186,7 +186,9 @@
   "wifiNetworkPins": {},
   "bluetoothDevicePins": {},
   "audioInputDevicePins": {},
-  "audioOutputDevicePins": {},
+  "audioOutputDevicePins": {
+    "preferredOutput": "alsa_output.pci-0000_0f_00.6.analog-stereo"
+  },
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
@@ -231,6 +233,7 @@
   "notificationTimeoutCritical": 0,
   "notificationPopupPosition": 0,
   "osdAlwaysShowValue": true,
+  "osdPosition": 5,
   "osdVolumeEnabled": true,
   "osdBrightnessEnabled": true,
   "osdIdleInhibitorEnabled": true,
@@ -257,6 +260,7 @@
   "updaterUseCustomCommand": false,
   "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
+  "displayNameMode": "system",
   "screenPreferences": {},
   "showOnLastDisplay": {},
   "configVersion": 1
