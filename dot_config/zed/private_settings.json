@@ -9,14 +9,9 @@
     "Kdl": ["*.kdl.tmpl"],
     "Shell Script": ["conf"]
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "agent": {
-    "always_allow_tool_actions": true,
     "default_profile": "write",
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
-    },
     "model_parameters": []
   },
   "show_edit_predictions": false,
