@@ -6,7 +6,7 @@ spawn-at-startup "swayidle"
 spawn-sh-at-startup "sleep 1 && pkill .nm-applet-wrap" // nm-applet is forcing itself on me and i don't know why
 spawn-sh-at-startup "wl-paste --watch cliphist store &"
 {{ if eq .chezmoi.hostname "anura" }}
-spawn-at-startup "vesktop"
+spawn-sh-at-startup "sleep 1 && vesktop"
 spawn-at-startup "steam"
 // spawn-at-startup "obs" "--startreplaybuffer" "--startminimized" "--disable-shutdown-check"
 {{ end }}
