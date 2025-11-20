@@ -144,7 +144,7 @@
   "weatherCoordinates": "40.7128,-74.0060",
   "useAutoLocation": true,
   "weatherEnabled": true,
-  "networkPreference": "auto",
+  "networkPreference": "wifi",
   "vpnLastConnected": "c65eb802-70f3-45ef-9ce5-29ba49d73556",
   "iconTheme": "System Default",
   "launcherLogoMode": "os",
@@ -185,9 +185,11 @@
   "brightnessDevicePins": {},
   "wifiNetworkPins": {},
   "bluetoothDevicePins": {},
-  "audioInputDevicePins": {},
+  "audioInputDevicePins": {
+    "preferredInput": "wivrn.source"
+  },
   "audioOutputDevicePins": {
-    "preferredOutput": "alsa_output.pci-0000_0f_00.6.analog-stereo"
+    "preferredOutput": "wivrn.sink"
   },
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
@@ -218,7 +220,7 @@
   "dankBarGothCornerRadiusOverride": false,
   "dankBarGothCornerRadiusValue": 12,
   "dankBarBorderEnabled": false,
-  "dankBarBorderColor": "surfaceText",
+  "dankBarBorderColor": "primary",
   "dankBarBorderOpacity": 1,
   "dankBarBorderThickness": 2,
   "popupGapsAuto": true,
