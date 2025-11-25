@@ -1,0 +1,84 @@
+{
+  "colors": [
+    {
+      "r": {{color0 | red}},
+      "g": {{color0 | green}},
+      "b": {{color0 | blue}}
+    },
+    {
+      "r": {{color1 | red}},
+      "g": {{color1 | green}},
+      "b": {{color1 | blue}}
+    },
+    {
+      "r": {{color2 | red}},
+      "g": {{color2 | green}},
+      "b": {{color2 | blue}}
+    },
+    {
+      "r": {{color3 | red}},
+      "g": {{color3 | green}},
+      "b": {{color3 | blue}}
+    },
+    {
+      "r": {{color4 | red}},
+      "g": {{color4 | green}},
+      "b": {{color4 | blue}}
+    },
+    {
+      "r": {{color5 | red}},
+      "g": {{color5 | green}},
+      "b": {{color5 | blue}}
+    },
+    {
+      "r": {{color6 | red}},
+      "g": {{color6 | green}},
+      "b": {{color6 | blue}}
+    },
+    {
+      "r": {{color7 | red}},
+      "g": {{color7 | green}},
+      "b": {{color7 | blue}}
+    },
+    {
+      "r": {{color8 | red}},
+      "g": {{color8 | green}},
+      "b": {{color8 | blue}}
+    },
+    {
+      "r": {{color9 | red}},
+      "g": {{color9 | green}},
+      "b": {{color9 | blue}}
+    },
+    {
+      "r": {{color10 | red}},
+      "g": {{color10 | green}},
+      "b": {{color10 | blue}}
+    },
+    {
+      "r": {{color11 | red}},
+      "g": {{color11 | green}},
+      "b": {{color11 | blue}}
+    },
+    {
+      "r": {{color12 | red}},
+      "g": {{color12 | green}},
+      "b": {{color12 | blue}}
+    },
+    {
+      "r": {{color13 | red}},
+      "g": {{color13 | green}},
+      "b": {{color13 | blue}}
+    },
+    {
+      "r": {{color14 | red}},
+      "g": {{color14 | green}},
+      "b": {{color14 | blue}}
+    },
+    {
+      "r": {{color15 | red}},
+      "g": {{color15 | green}},
+      "b": {{color15 | blue}}
+    },
+  ]
+}
