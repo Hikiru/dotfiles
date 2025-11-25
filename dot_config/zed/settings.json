@@ -1,4 +1,5 @@
 {
+  "buffer_line_height": "standard",
   "languages": {
     "Nix": {
       "tab_size": 2,
@@ -11,7 +12,11 @@
   },
   "relative_line_numbers": "enabled",
   "agent": {
-    "default_profile": "write",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-opus-4-5"
+    },
+    "default_profile": "ask",
     "model_parameters": []
   },
   "show_edit_predictions": false,
