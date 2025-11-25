@@ -109,17 +109,17 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // Window rules
 
 window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
+    match app-id="org.gnome.Nautilus" title="Open Files"
+    match app-id="vrmonitor"
+    match app-id="org.quickshell" title="Settings"
+    open-floating true
 }
 
 window-rule {
-    match app-id="org.gnome.Nautilus" title="Open Files"
-    match app-id="vrmonitor"
+    match app-id="protonvpn"
     open-floating true
+    default-floating-position x=7 y=8 relative-to="top-right"
+    default-window-height { fixed 560; }
 }
 
 window-rule {
