@@ -1,25 +1,3 @@
-/*
-## How to Install the Zed Theme
-
-1. Copy this template to your wallust templates folder:
-
-2. Add this section to your wallust.toml file:
-    ```
-      [templates.zed_theme]
-      template = "zed.json"
-      target = "~/.config/zed/themes/wallust.json"
-    ```
-
-3. Generate the theme: Run wallust to generate the theme from your current wallpaper:
-   ```bash
-     wallust run /path/to/your/wallpaper.jpg
-   ```
-
-4. Select the theme in Zed:
-   - Press `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Linux) to open the command palette
-   - Type "theme selector" and select it
-   - Choose "Wallust" from the theme list
-*/
 {
   "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
   "author": "Jan Reinsch <jan@coded-aesthetics.com>",
