@@ -118,7 +118,7 @@
   "weatherCoordinates": "40.7128,-74.0060",
   "useAutoLocation": true,
   "weatherEnabled": true,
-  "networkPreference": "ethernet",
+  "networkPreference": "wifi",
   "vpnLastConnected": "264aa036-0476-40ee-865b-3f9952666adc",
   "iconTheme": "System Default",
   "launcherLogoMode": "os",
@@ -202,6 +202,7 @@
   "osdCapsLockEnabled": true,
   "osdPowerProfileEnabled": true,
   "powerActionConfirm": true,
+  "powerActionHoldDuration": 1,
   "powerMenuActions": [
     "reboot",
     "logout",
@@ -301,7 +302,11 @@
       "openOnOverview": true,
       "visible": true,
       "popupGapsAuto": true,
-      "popupGapsManual": 4
+      "popupGapsManual": 4,
+      "widgetOutlineEnabled": false,
+      "widgetOutlineColor": "primary",
+      "widgetOutlineThickness": 1,
+      "widgetOutlineOpacity": 1
     }
   ],
   "configVersion": 2
