@@ -10,7 +10,7 @@
     "Kdl": ["*.kdl.tmpl"],
     "Shell Script": ["conf"]
   },
-  "relative_line_numbers": "enabled",
+  "relative_line_numbers": true,
   "agent": {
     "default_model": {
       "provider": "zed.dev",
