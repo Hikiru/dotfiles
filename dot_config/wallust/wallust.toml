@@ -37,6 +37,7 @@ kitty = { template = 'kitty.conf', target = '~/.config/kitty/colors.conf' }
 kvconfig = { template = 'kvantum.kvconfig', target = '~/.config/Kvantum/wallust/wallust.kvconfig' }
 kvsvg = { template = 'kvantum.svg', target = '~/.config/Kvantum/wallust/wallust.svg' }
 palettum = { template = 'palettum.json', target = '~/.config/palettum/Wallust.json '}
+plasma = { template = 'plasma.colors', target = '~/.local/share/color-schemes/Wallust.colors' }
 qt5ct = { template = 'qtct.conf', target = '~/.config/qt5ct/colors/wallust.conf' }
 qt6ct = { template = 'qtct.conf', target = '~/.config/qt6ct/colors/wallust.conf' }
 vesktop = { template = 'discord.css', target = '~/.config/vesktop/themes/wallust.css' }
