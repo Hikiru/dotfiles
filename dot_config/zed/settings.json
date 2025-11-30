@@ -8,7 +8,7 @@
   },
   "file_types": {
     "Kdl": ["*.kdl.tmpl"],
-    "Shell Script": ["conf"]
+    "Shell Script": ["conf", "dot_profile", "dot_bashrc"]
   },
   "relative_line_numbers": "enabled",
   "agent": {
