@@ -160,7 +160,7 @@ window-rule {
 
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
-    default-floating-position x=-5 y=0 relative-to="top-right"
+    default-floating-position x=10 y=10 relative-to="top-right"
     open-focused false
 }
 
@@ -214,6 +214,7 @@ binds {
     Mod+D hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     XF86LaunchB hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Super+Alt+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Super+Alt+P hotkey-overlay-title="Power Menu" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
     Mod+Period hotkey-overlay-title="Edit Config" { spawn "kitty" "-d" "~/.local/share/chezmoi" "-e" "chezmoi" "edit" "--watch" "--apply"; }
     Mod+Shift+S { screenshot; }
     Mod+Apostrophe { spawn "kitty" "--title" "Window Picker" "--hold" "-e" "niri" "msg" "pick-window"; }
