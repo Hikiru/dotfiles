@@ -6,11 +6,11 @@ spawn-at-startup "swayidle"
 spawn-sh-at-startup "sleep 1 && pkill .nm-applet-wrap" // nm-applet is forcing itself on me and i don't know why
 spawn-sh-at-startup "wl-paste --watch cliphist store &"
 {{ if eq .chezmoi.hostname "anura" }}
-spawn-sh-at-startup "sleep 1 && vesktop"
+spawn-sh-at-startup "sleep 2 && vesktop"
+spawn-sh-at-startup "sleep 2 && obs --startreplaybuffer --minimize-to-tray --disable-shutdown-check"
 spawn-at-startup "steam"
-// spawn-at-startup "obs" "--startreplaybuffer" "--startminimized" "--disable-shutdown-check"
 {{ end }}
-spawn-at-startup "zen"
+spawn-at-startup "zen-beta"
 
 environment {
     QT_QPA_PLATFORMTHEME "qt6ct"
@@ -33,7 +33,7 @@ input {
 
     // warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="40%"
-    workspace-auto-back-and-forth
+    // workspace-auto-back-and-forth
 }
 
 output "DP-1" {
@@ -78,22 +78,6 @@ layout {
 
     default-column-width { proportion 0.5; }
 
-    focus-ring {
-        off
-        width 2
-        active-color "#7fc8ff"
-        inactive-color "#505050"
-    }
-
-    border {
-        // off
-        width 2
-        active-color "#c4a7e7" // rose pine
-        // active-color "a9b665" // gruvbox material
-        inactive-color "#505050"
-        urgent-color "#9b0000"
-    }
-
     background-color "transparent"
 
     shadow {
@@ -112,8 +96,16 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 window-rule {
     match app-id="org.gnome.Nautilus" title="Open Files"
+    match app-id="org.gnome.Nautilus" title="Choose a location to save the image"
+    match app-id="org.gnome.Nautilus" title="Pick game to add"
     match app-id="vrmonitor"
     match app-id="org.quickshell" title="Settings"
+    match app-id="org.quickshell" title="Add Desktop Widget"
+    match app-id="org.quickshell" title="Browse Plugins"
+    match app-id="org.quickshell" title="Third-Party Plugin Warning"
+    match app-id="org.quickshell" title="Files - Select Wallpaper"
+    match app-id="Aseprite" title="Warning"
+    match title="^HoYoPlay$"
     open-floating true
 }
 
@@ -143,6 +135,7 @@ window-rule {
 window-rule {
     match app-id="discord"
     match app-id="vesktop"
+    match app-id="fluxer_app"
     open-maximized true
     open-on-workspace "chat"
 }
@@ -154,6 +147,14 @@ window-rule {
 }
 
 window-rule {
+    match app-id="gimp"
+    match app-id="krita"
+    match app-id="PixiEditor.Desktop"
+    open-maximized true
+    open-on-workspace "misc"
+}
+
+window-rule {
     match app-id="steam" title="^Steam$"
     match app-id="steam" title="^Sign in to Steam$"
     open-maximized true
@@ -161,15 +162,28 @@ window-rule {
 }
 
 window-rule {
-    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
-    default-floating-position x=10 y=10 relative-to="top-right"
-    open-focused false
+    match app-id="steam" title="^Special Offers$"
+    match app-id="com.obsproject.Studio" title="Projector - Preview"
+    match title="^HoYoPlay$"
+    open-on-workspace "games"
 }
 
 window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=0 y=0 relative-to="bottom-right"
+    open-focused false
+}
+
+// VRR
+window-rule {
     match app-id="gamescope"
-    match app-id="cyberpunk2077"
-    match title="PEAK"
+    match title="Cyberpunk 2077"
+    match title="^PEAK$"
+    match title="^ARC Raiders$"
+    match title="^Overwatch$"
+    match app-id="Minecraft"
+    match title="^Satisfactory  $"
+    match title="^Split Fiction  $"
     variable-refresh-rate true
     open-on-workspace "games"
 }
@@ -208,7 +222,7 @@ workspace "games"
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+B { spawn "zen"; }
+    Mod+B { spawn "zen-beta"; }
     Mod+E { spawn "nautilus"; }
     Mod+Z { spawn "zeditor"; }
     Mod+Shift+Z { spawn "kitty" "nvim"; }
@@ -236,7 +250,7 @@ binds {
     XF86KbdBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "-d" "smc::kbd_backlight" "5%+"; }
     XF86KbdBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "-d" "smc::kbd_backlight" "5%-"; }
 
-    Mod+O repeat=false { toggle-overview; }
+    Mod+W repeat=false { toggle-overview; }
     XF86LaunchA repeat=false { toggle-overview; }
 
     Mod+C { close-window; }
@@ -347,6 +361,7 @@ binds {
     Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { expand-column-to-available-width; }
+    Mod+Ctrl+F { maximize-window-to-edges; }
     Alt+Return { fullscreen-window; }
 
     Mod+S { center-column; } // "S" for "senter"
@@ -361,7 +376,7 @@ binds {
     Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-    Mod+W { toggle-column-tabbed-display; }
+    Mod+T { toggle-column-tabbed-display; }
 
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
@@ -377,3 +392,7 @@ binds {
 hotkey-overlay {
     skip-at-startup
 }
+
+include "dms/cursor.kdl"
+
+include "dms/outputs.kdl"

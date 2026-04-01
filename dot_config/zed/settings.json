@@ -1,4 +1,19 @@
 {
+  "ssh_connections": [
+    {
+      "host": "ideapad",
+      "username": "hikiru",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/hikiru/snacc"
+          ]
+        }
+      ]
+    }
+  ],
+  "helix_mode": false,
   "buffer_line_height": "standard",
   "languages": {
     "Nix": {
@@ -13,8 +28,8 @@
   "relative_line_numbers": "enabled",
   "agent": {
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-opus-4-5"
+      "provider": "copilot_chat",
+      "model": "claude-haiku-4.5"
     },
     "default_profile": "ask",
     "model_parameters": []
