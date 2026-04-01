@@ -1,0 +1,16 @@
+layout {
+    focus-ring {
+        off
+        width 2
+        active-color "{{cursor}}"
+        inactive-color "#505050"
+    }
+
+    border {
+        on
+        width 2
+        active-color "{{cursor}}"
+        inactive-color "#505050"
+        urgent-color "{{color1}}"
+    }
+}

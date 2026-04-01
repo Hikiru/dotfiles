@@ -36,6 +36,7 @@ heroic = { template = 'heroic.css', target = '~/.config/heroic/themes/wallust.cs
 kitty = { template = 'kitty.conf', target = '~/.config/kitty/colors.conf' }
 kvconfig = { template = 'kvantum.kvconfig', target = '~/.config/Kvantum/wallust/wallust.kvconfig' }
 kvsvg = { template = 'kvantum.svg', target = '~/.config/Kvantum/wallust/wallust.svg' }
+niri = { template = 'niri.kdl', target = '~/.config/niri/colors.kdl'}
 palettum = { template = 'palettum.json', target = '~/.config/palettum/Wallust.json '}
 plasma = { template = 'plasma.colors', target = '~/.local/share/color-schemes/Wallust.colors' }
 qt5ct = { template = 'qtct.conf', target = '~/.config/qt5ct/colors/wallust.conf' }

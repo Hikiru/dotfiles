@@ -2,7 +2,7 @@
   "name": "Wallust",
   "primary": "{{cursor}}",
   "primaryText": "{{background}}",
-  "primaryContainer": "{{color4}}",
+  "primaryContainer": "{{color7}}",
   "secondary": "{{color3}}",
   "surface": "{{color0}}",
   "surfaceText": "{{cursor}}",

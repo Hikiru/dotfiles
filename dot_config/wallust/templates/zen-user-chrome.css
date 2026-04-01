@@ -21,10 +21,16 @@
   --zen-themed-toolbar-bg: {{background}} !important;
   --zen-main-browser-background: {{background}} !important;
   --toolbox-bgcolor-inactive: {{color0}} !important;
+  --zen-themed-toolbar-bg-transparent: {{color0}} !important;
 }
 
 #permissions-granted-icon {
   color: {{foreground}} !important;
+}
+
+#historySwipeAnimationPreviousArrow,#historySwipeAnimationNextArrow {
+  --swipe-nav-icon-primary-color: {{cursor}} !important;
+  --swipe-nav-icon-accent-color: {{background}} !important;
 }
 
 .sidebar-placesTree {
@@ -122,12 +128,20 @@ toolbar .toolbarbutton-1 {
   --identity-icon-color: {{color15}} !important;
 }
 
-hbox#titlebar {
-  background-color: {{background}} !important;
+#zen-toolbar-background {
+  --zen-main-browser-background-toolbar: {{background}} !important;
 }
 
 #zen-appcontent-navbar-container {
   background-color: {{background}} !important;
+}
+
+#commonDialog {
+  background-color: {{background}} !important;
+}
+
+#zen-browser-background {
+  --zen-main-browser-background: {{background}} !important;
 }
 
 #contentAreaContextMenu menu,
