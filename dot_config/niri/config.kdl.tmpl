@@ -10,7 +10,7 @@ spawn-sh-at-startup "sleep 2 && vesktop"
 spawn-sh-at-startup "sleep 2 && obs --startreplaybuffer --minimize-to-tray --disable-shutdown-check"
 spawn-at-startup "steam"
 {{ end }}
-spawn-at-startup "zen-beta"
+spawn-at-startup "zen-browser"
 
 environment {
     QT_QPA_PLATFORMTHEME "qt6ct"
@@ -222,7 +222,7 @@ workspace "games"
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+B { spawn "zen-beta"; }
+    Mod+B { spawn "zen-browser"; }
     Mod+E { spawn "nautilus"; }
     Mod+Z { spawn "zeditor"; }
     Mod+Shift+Z { spawn "kitty" "nvim"; }
