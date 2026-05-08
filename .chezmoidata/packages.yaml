@@ -1,0 +1,101 @@
+packages:
+  cachyos:
+    # Essentials
+    - 'zen-browser'
+    - 'nautilus'
+    - 'file-roller'
+    - 'xdg-user-dirs'
+    - 'xdg-user-dirs-gtk'
+    - 'ffmpegthumbnailer'
+    - 'unzip'
+    - 'gnome-software'
+    - 'loupe'
+    - 'celluloid'
+    - 'chezmoi'
+
+    # Theming
+    - 'wallust' # AUR
+    - 'qt5ct'
+    - 'qt6ct'
+    - 'kvantum-qt5'
+    - 'kvantum'
+    - 'breeze5'
+    - 'breeze'
+    - 'adw-gtk-theme'
+    - 'papirus-icon-theme'
+    - 'adwaita-icon-theme'
+
+    # Terminal
+    - 'kitty'
+    - 'starship'
+    - 'yazi'
+    - 'btop'
+    - 'fastfetch'
+    - 'rmpc'
+    - 'mpd'
+
+    # GUI
+    - 'discord'
+    - 'vesktop'
+    - 'pear-desktop'
+
+    # Creative
+    - 'gimp'
+    - 'krita'
+    - 'reaper'
+    - 'obsidian'
+
+    # Utilities
+    - 'distrobox'
+    - 'onlyoffice-bin'
+    - 'proton-vpn-gtk-app'
+    - 'qbittorrent'
+    - 'popsicle'
+
+    # Audio/video
+    - 'vlc'
+    - 'easyeffects'
+    - 'video-trimmer'
+    - 'ffmpeg'
+    - 'pipewire-pulse'
+
+    # Dev
+    - 'zed'
+    - 'neovim'
+    - 'base-devel'
+    - 'git'
+    - 'lazygit'
+    - 'wget'
+    - 'gcc'
+    - 'python3'
+    - 'just'
+
+  gaming:
+    flatscreen:
+      - 'steam'
+      - 'proton-cachyos-slr'
+      - 'heroic-games-launcher'
+      - 'gamescope'
+      - 'gamescope-session-cachyos'
+      - 'scopebuddy-git' # AUR
+      - 'mangohud'
+      - 'prismlauncher'
+      - 'sunshine'
+      - 'moonlight-qt'
+    vr:
+      - 'wivrn-dashboard' # AUR
+      - 'wivrn-server' # AUR
+      - 'wayvr' # AUR
+      - 'xrizer' # AUR
+      - 'lib32-xrizer ' # AUR
+
+  flatpak:
+    - 'com.obsproject.Studio'
+    - 'com.obsproject.Studio.Plugin.OBSVkCapture'
+    - 'io.github.wartybix.Constrict'
+    - 'io.github.MakovWait.Godots'
+    - 'net.pixieditor.PixiEditor'
+    - 'org.upscayl.Upscayl'
+    - 'it.mijorus.gearlever'
+    - 'com.spotify.Client'
+    - 'com.steamgriddb.SGDBoop'

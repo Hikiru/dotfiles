@@ -1,0 +1,33 @@
+{{ if eq .osid "linux-cachyos" -}}
+#!/usr/bin/env bash
+
+paru -Syu --needed {{ .packages.cachyos | join " " }}
+flatpak install {{ .packages.flatpak | join " " }}
+
+read -p "Do you want to install flatscreen gaming packages? (y/n) " flatscreen
+
+case $flatscreen in
+    [yY] )
+        echo "Installing flatscreen gaming packages..."
+        paru -Syu --needed {{ .packages.gaming.flatscreen | join " " }}
+        ;;
+    [nN] )
+        ;;
+    [*] )
+        echo "Invalid response.";;
+esac
+
+read -p "Do you want to install VR gaming packages? (y/n) " vr
+
+case $vr in
+    [yY] )
+        echo "Installing VR gaming packages..."
+        paru -Syu --needed {{ .packages.gaming.vr | join " " }}
+        ;;
+    [nN] )
+        ;;
+    [*] )
+        echo "Invalid response.";;
+esac
+
+{{ end -}}
