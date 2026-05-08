@@ -3,17 +3,18 @@
 spawn-at-startup "dms" "run"
 // spawn-at-startup "xsettingsd"
 spawn-at-startup "swayidle"
-spawn-sh-at-startup "sleep 1 && pkill .nm-applet-wrap" // nm-applet is forcing itself on me and i don't know why
 spawn-sh-at-startup "wl-paste --watch cliphist store &"
 {{ if eq .chezmoi.hostname "anura" }}
 spawn-sh-at-startup "sleep 2 && vesktop"
-spawn-sh-at-startup "sleep 2 && obs --startreplaybuffer --minimize-to-tray --disable-shutdown-check"
+spawn-sh-at-startup "rm -r ~/.var/app/com.obsproject.Studio/config/obs-studio/.sentinel && sleep 2 && flatpak run com.obsproject.Studio --startreplaybuffer --minimize-to-tray"
 spawn-at-startup "steam"
 {{ end }}
 spawn-at-startup "zen-browser"
 
 environment {
     QT_QPA_PLATFORMTHEME "qt6ct"
+    OBS_VKCAPTURE "1"
+    EDITOR "nvim"
 }
 
 input {
@@ -42,6 +43,7 @@ output "DP-1" {
     scale 1.3
     transform "normal"
     position x=0 y=0
+    focus-at-startup
 }
 
 output "eDP-1" {
@@ -163,6 +165,7 @@ window-rule {
 
 window-rule {
     match app-id="steam" title="^Special Offers$"
+    match app-id="steam" title="^Friends List$"
     match app-id="com.obsproject.Studio" title="Projector - Preview"
     match title="^HoYoPlay$"
     open-on-workspace "games"
@@ -213,11 +216,21 @@ layer-rule {
     place-within-backdrop true
 }
 
-workspace "browser"
-workspace "chat"
-workspace "edit"
-workspace "misc"
-workspace "games"
+workspace "browser" {
+    open-on-output "DP-1"
+}
+workspace "chat" {
+open-on-output "DP-1"
+}
+workspace "edit" {
+open-on-output "DP-1"
+}
+workspace "misc" {
+open-on-output "DP-1"
+}
+workspace "games" {
+open-on-output "DP-1"
+}
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
