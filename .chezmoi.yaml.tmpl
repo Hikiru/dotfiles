@@ -3,11 +3,12 @@
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
-mode = "symlink"
-[data]
-    osid = {{ $osid | quote }}
-[edit]
-    watch = true
-[merge]
-    command = 'nvim'
-    args = ['-d']
+mode: symlink
+edit:
+    watch: true
+merge:
+    command: nvim
+    args:
+        - "-d"
+data:
+    osid: {{ $osid | quote }}
