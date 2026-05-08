@@ -1,4 +1,11 @@
 {
+  "cli_default_open_behavior": "existing_window",
+  "git_panel": {
+    "dock": "left",
+  },
+  "project_panel": {
+    "dock": "left",
+  },
   "ssh_connections": [
     {
       "host": "ideapad",
@@ -6,33 +13,37 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/hikiru/snacc"
-          ]
-        }
-      ]
-    }
+          "paths": ["/home/hikiru/snacc"],
+        },
+      ],
+    },
   ],
   "helix_mode": false,
   "buffer_line_height": "standard",
   "languages": {
     "Nix": {
       "tab_size": 2,
-      "language_servers": ["nixd"]
-    }
+      "language_servers": ["nixd"],
+    },
+    "YAML": {
+      "prettier": {
+        "singleQuote": true,
+      },
+    },
   },
   "file_types": {
     "Kdl": ["*.kdl.tmpl"],
-    "Shell Script": ["conf", "dot_profile", "dot_bashrc"]
+    "Shell Script": ["conf", "dot_profile", "dot_bashrc"],
   },
   "relative_line_numbers": "enabled",
   "agent": {
+    "dock": "right",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-haiku-4.5"
+      "model": "claude-haiku-4.5",
     },
     "default_profile": "ask",
-    "model_parameters": []
+    "model_parameters": [],
   },
   "show_edit_predictions": false,
   "buffer_font_family": "CaskaydiaCove Nerd Font",
@@ -40,5 +51,5 @@
   "theme": "Wallust",
   "ui_font_family": "DejaVu Sans",
   "ui_font_size": 16.0,
-  "vim_mode": true
+  "vim_mode": true,
 }
