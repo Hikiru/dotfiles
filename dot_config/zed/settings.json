@@ -33,7 +33,7 @@
   },
   "file_types": {
     "Kdl": ["*.kdl.tmpl"],
-    "Shell Script": ["conf", "dot_profile", "dot_bashrc"],
+    "Shell Script": ["conf", "dot_profile", "dot_bashrc", "*.sh.tmpl"],
   },
   "relative_line_numbers": "enabled",
   "agent": {
