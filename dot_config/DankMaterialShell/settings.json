@@ -421,7 +421,8 @@
   "showOnLastDisplay": {},
   "niriOutputSettings": {
     "DP-1": {
-      "vrrOnDemand": true
+      "vrrOnDemand": true,
+      "focusAtStartup": true
     }
   },
   "hyprlandOutputSettings": {},
