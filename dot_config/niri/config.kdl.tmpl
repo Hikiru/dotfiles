@@ -37,20 +37,6 @@ input {
     // workspace-auto-back-and-forth
 }
 
-output "DP-1" {
-    mode "2560x1440"
-    variable-refresh-rate on-demand=true
-    scale 1.3
-    transform "normal"
-    position x=0 y=0
-    focus-at-startup
-}
-
-output "eDP-1" {
-    mode "2560x1600"
-    scale 1.75
-}
-
 // Style
 
 cursor {
@@ -309,7 +295,8 @@ binds {
     Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
     Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
 
-    Mod+Tab { focus-workspace-previous; }
+    Mod+Tab      { focus-workspace-previous; }
+    Mod+Ctrl+Tab { focus-monitor-previous; }
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
     Mod+U              { focus-workspace-down; }
