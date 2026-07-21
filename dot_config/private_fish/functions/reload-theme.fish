@@ -27,14 +27,14 @@ function reload-theme -d "Reload theme by running wallust commands and killing p
     end
 
     # Default programs to restart
-    set default_programs zen-beta nautilus easyeffects gnome-software
+    set default_programs zen nautilus easyeffects gnome-software
 
     set programs $default_programs
     if set --query _flag_extra_programs
         set --append programs $_flag_extra_programs
     end
 
-    set spawn_programs zen-beta
+    set spawn_programs zen-browser
     if set --query _flag_spawn
         set --append spawn_programs $_flag_spawn
     end
