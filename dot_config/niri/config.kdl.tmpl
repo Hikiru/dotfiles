@@ -1,8 +1,8 @@
 // https://yalter.github.io/niri/Configuration%3A-Introduction.html
 
 spawn-at-startup "dms" "run"
-// spawn-at-startup "xsettingsd"
-spawn-at-startup "swayidle"
+spawn-at-startup "xsettingsd"
+// spawn-at-startup "swayidle"
 spawn-sh-at-startup "wl-paste --watch cliphist store &"
 {{ if eq .chezmoi.hostname "anura" }}
 spawn-sh-at-startup "sleep 2 && vesktop"
@@ -41,6 +41,7 @@ input {
 
 cursor {
     xcursor-theme "Adwaita"
+    xcursor-size 24
 }
 
 window-rule {
@@ -51,6 +52,7 @@ window-rule {
 prefer-no-csd
 
 include "colors.kdl"
+include "dms/layout.kdl"
 
 layout {
     gaps 8
@@ -135,6 +137,12 @@ window-rule {
 }
 
 window-rule {
+    match app-id="^com.stremio.Stremio$"
+    open-fullscreen true
+    open-on-workspace "misc"
+}
+
+window-rule {
     match app-id="gimp"
     match app-id="krita"
     match app-id="PixiEditor.Desktop"
@@ -163,16 +171,22 @@ window-rule {
     open-focused false
 }
 
-// VRR
+// Games
 window-rule {
+    match app-id="^steam_app_.*$"
     match app-id="gamescope"
+    match app-id="Minecraft"
+    match app-id="^COBBLEVERSE$"
     match title="Cyberpunk 2077"
     match title="^PEAK$"
     match title="^ARC Raiders$"
     match title="^Overwatch$"
-    match app-id="Minecraft"
     match title="^Satisfactory  $"
     match title="^Split Fiction  $"
+    match title="^Deadlock$"
+    match title="Subnautica 2"
+    match title="^R.E.P.O.$"
+    open-fullscreen true
     variable-refresh-rate true
     open-on-workspace "games"
 }
@@ -233,6 +247,7 @@ binds {
     Mod+Period hotkey-overlay-title="Edit Config" { spawn "kitty" "-d" "~/.local/share/chezmoi" "-e" "chezmoi" "edit" "--watch" "--apply"; }
     Mod+Shift+S { screenshot; }
     Mod+Apostrophe { spawn "kitty" "--title" "Window Picker" "--hold" "-e" "niri" "msg" "pick-window"; }
+    Mod+G { spawn-sh "obs-cmd replay save && notify-send -a OBS -i OBS 'Replay saved!'"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
@@ -255,9 +270,11 @@ binds {
     Mod+C { close-window; }
 
     Mod+Left  { focus-column-left; }
+    Mod+MouseBack { focus-column-left; }
     Mod+Down  { focus-window-down; }
     Mod+Up    { focus-window-up; }
     Mod+Right { focus-column-right; }
+    Mod+MouseForward { focus-column-right; }
     Mod+H     { focus-column-left; }
     Mod+J     { focus-window-down; }
     Mod+K     { focus-window-up; }
