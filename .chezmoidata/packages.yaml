@@ -1,5 +1,14 @@
 packages:
   cachyos:
+    # Compositor/shell
+    - 'niri'
+    - 'dms-shell'
+    - 'cava'
+    - 'dankcalendar'
+    - 'dgop'
+    - 'dsearch'
+    - 'qt6-multimedia'
+
     # Essentials
     - 'zen-browser'
     - 'nautilus'
@@ -29,6 +38,7 @@ packages:
     - 'kitty'
     - 'starship'
     - 'yazi'
+    - '7zip'
     - 'btop'
     - 'fastfetch'
     - 'rmpc'
@@ -47,10 +57,12 @@ packages:
 
     # Utilities
     - 'distrobox'
+    - 'localsend'
     - 'onlyoffice-bin'
     - 'proton-vpn-gtk-app'
     - 'qbittorrent'
     - 'popsicle'
+    - 'playerctl'
 
     # Audio/video
     - 'vlc'
