@@ -5,8 +5,8 @@ spawn-at-startup "xsettingsd"
 // spawn-at-startup "swayidle"
 spawn-sh-at-startup "wl-paste --watch cliphist store &"
 {{ if eq .chezmoi.hostname "anura" }}
-spawn-sh-at-startup "sleep 2 && vesktop"
-spawn-sh-at-startup "rm -r ~/.var/app/com.obsproject.Studio/config/obs-studio/.sentinel && sleep 2 && flatpak run com.obsproject.Studio --startreplaybuffer --minimize-to-tray"
+spawn-sh-at-startup "vesktop"
+spawn-sh-at-startup "rm -r ~/.var/app/com.obsproject.Studio/config/obs-studio/.sentinel && flatpak run com.obsproject.Studio --startreplaybuffer --minimize-to-tray"
 spawn-at-startup "steam"
 {{ end }}
 spawn-at-startup "zen-browser"
@@ -247,7 +247,7 @@ binds {
     Mod+Period hotkey-overlay-title="Edit Config" { spawn "kitty" "-d" "~/.local/share/chezmoi" "-e" "chezmoi" "edit" "--watch" "--apply"; }
     Mod+Shift+S { screenshot; }
     Mod+Apostrophe { spawn "kitty" "--title" "Window Picker" "--hold" "-e" "niri" "msg" "pick-window"; }
-    Mod+G { spawn-sh "obs-cmd replay save && notify-send -a OBS -i OBS 'Replay saved!'"; }
+    Mod+G { spawn-sh "~/Scripts/replay.sh"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
