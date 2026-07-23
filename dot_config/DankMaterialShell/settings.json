@@ -586,12 +586,21 @@
   "updaterIncludeFlatpak": true,
   "updaterAllowAUR": true,
   "updaterIgnoredPackages": [],
-  "displayNameMode": "system",
+  "displayNameMode": "model",
   "screenPreferences": {},
   "showOnLastDisplay": {},
   "niriOutputSettings": {
     "DP-1": {
       "vrrOnDemand": true,
+      "focusAtStartup": false
+    },
+    "DP-3": {
+      "focusAtStartup": true
+    },
+    "Ancor Communications Inc VG248 H8LMQS103716": {
+      "vrrOnDemand": true
+    },
+    "Microstep MAG 271QPX E2 Unknown": {
       "focusAtStartup": true
     }
   },
