@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+programs=(zen nautilus easyeffects gnome-software xdg-desktop-por)
+
+for i in "${programs[@]}"; do
+    pkill $i
+done
+
+if [[ -n $1 ]]; then
+    wallust cs $1 -q
+    dms ipc wallpaper set ~/Pictures/Wallpapers/$1/"$(ls ~/Pictures/Wallpapers/$1/ | head -n 1)"
+else
+    ls ~/.config/wallust/colorschemes/ | sed 's/\.json//'
+fi
+
+# restart browser & easy effects
+niri msg action spawn -- zen-browser
+niri msg action spawn -- easyeffects
