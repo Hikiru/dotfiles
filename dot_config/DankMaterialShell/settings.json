@@ -408,23 +408,6 @@
   "fadeToDpmsEnabled": true,
   "fadeToDpmsGracePeriod": 5,
   "launchPrefix": "",
-  "brightnessDevicePins": {},
-  "wifiNetworkPins": {
-    "preferredWifi": [
-      "Thishouse"
-    ]
-  },
-  "bluetoothDevicePins": {},
-  "audioInputDevicePins": {
-    "preferredInput": [
-      "alsa_input.usb-HP__Inc_HyperX_SoloCast-00.analog-stereo"
-    ]
-  },
-  "audioOutputDevicePins": {
-    "preferredOutput": [
-      "alsa_output.usb-Apple__Inc._USB-C_to_3.5mm_Headphone_Jack_Adapter_DWH53330FAN2FN3A3-00.analog-stereo"
-    ]
-  },
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
@@ -803,5 +786,5 @@
   "barInsetPaddingShared": -1,
   "barInsetPaddingSyncAll": false,
   "frameBarInsetPadding": 8,
-  "configVersion": 12
+  "configVersion": 13
 }
