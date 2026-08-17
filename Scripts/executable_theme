@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
 programs=(zen nautilus easyeffects gnome-software xdg-desktop-por)
+nostartbrowser=false
 
 while getopts "ln" opt; do
-  case $opt in
-    l) ls ~/.config/wallust/colorschemes/ | sed 's/\.json//'; exit 0 ;;
-    n) unset programs[0]; nostartbrowser=true ;; # don't restart browser
-    \?) exit 1 ;;
-  esac
+    case $opt in
+        l) ls ~/.config/wallust/colorschemes/ | sed 's/\.json//'; exit 0 ;;
+        n) unset programs[0]; nostartbrowser=true ;; # don't restart browser
+        \?) exit 1 ;;
+    esac
 done
 shift $((OPTIND - 1))
 
@@ -16,19 +17,22 @@ for i in "${programs[@]}"; do
 done
 
 if [[ $(pgrep -f pear-desktop) ]]; then
-  YTM=true
-  pkill -fo pear-desktop # special pkill for youtube music
+    YTM=true
+    pkill -fo pear-desktop # special pkill for youtube music
 fi
 
 if [[ -n $1 ]]; then
-  wallust cs $1 -q
-  dms ipc wallpaper set ~/Pictures/Wallpapers/$1/"$(ls ~/Pictures/Wallpapers/$1/ | head -n 1)"
+    wallust cs $1 -q
+    dms ipc wallpaper set ~/Pictures/Wallpapers/$1/"$(ls ~/Pictures/Wallpapers/$1/ | head -n 1)"
 fi
 
-if [[ $nostartbrowser -ne true ]]; then
-  niri msg action spawn -- zen-browser
+if [[ $nostartbrowser -eq false ]]; then
+    niri msg action spawn -- zen-browser
+    echo ahh
+else
+    echo ahhhh
 fi
 niri msg action spawn -- easyeffects
 if [[ $YTM -eq true ]]; then
-  niri msg action spawn -- pear-desktop
+    niri msg action spawn -- pear-desktop
 fi
