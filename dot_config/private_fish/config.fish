@@ -10,5 +10,4 @@ if status is-interactive
     starship init fish | source
 end
 
-# Created by `pipx` on 2026-05-20 01:12:06
-set PATH $PATH /home/hikiru/.local/bin
+set PATH $PATH /home/hikiru/.local/bin ~/Scripts
