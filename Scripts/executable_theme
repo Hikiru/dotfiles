@@ -2,17 +2,33 @@
 
 programs=(zen nautilus easyeffects gnome-software xdg-desktop-por)
 
+while getopts "ln" opt; do
+  case $opt in
+    l) ls ~/.config/wallust/colorschemes/ | sed 's/\.json//'; exit 0 ;;
+    n) unset programs[0]; nostartbrowser=true ;; # don't restart browser
+    \?) exit 1 ;;
+  esac
+done
+shift $((OPTIND - 1))
+
 for i in "${programs[@]}"; do
     pkill $i
 done
 
-if [[ -n $1 ]]; then
-    wallust cs $1 -q
-    dms ipc wallpaper set ~/Pictures/Wallpapers/$1/"$(ls ~/Pictures/Wallpapers/$1/ | head -n 1)"
-else
-    ls ~/.config/wallust/colorschemes/ | sed 's/\.json//'
+if [[ $(pgrep -f pear-desktop) ]]; then
+  YTM=true
+  pkill -fo pear-desktop # special pkill for youtube music
 fi
 
-# restart browser & easy effects
-niri msg action spawn -- zen-browser
+if [[ -n $1 ]]; then
+  wallust cs $1 -q
+  dms ipc wallpaper set ~/Pictures/Wallpapers/$1/"$(ls ~/Pictures/Wallpapers/$1/ | head -n 1)"
+fi
+
+if [[ $nostartbrowser -ne true ]]; then
+  niri msg action spawn -- zen-browser
+fi
 niri msg action spawn -- easyeffects
+if [[ $YTM -eq true ]]; then
+  niri msg action spawn -- pear-desktop
+fi
