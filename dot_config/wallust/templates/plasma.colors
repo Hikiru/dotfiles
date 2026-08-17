@@ -1,5 +1,5 @@
 [ColorEffects:Disabled]
-Color={{color7 | rgb}}
+Color=56,56,56
 ColorAmount=0
 ColorEffect=0
 ContrastAmount=0.65
@@ -8,8 +8,8 @@ IntensityAmount=0.1
 IntensityEffect=2
 
 [ColorEffects:Inactive]
-ChangeSelectionColor=true
-Color={{color15 | rgb}}
+ChangeSelectionColor=false
+Color=112,111,110
 ColorAmount=0.025
 ColorEffect=2
 ContrastAmount=0.1
@@ -19,104 +19,102 @@ IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate={{color1 | rgb}}
-BackgroundNormal={{color1 | rgb}}
-DecorationFocus={{color12 | rgb}}
-DecorationHover={{color12 | rgb}}
-ForegroundActive={{color14 | rgb}}
-ForegroundInactive={{color7 | rgb}}
-ForegroundLink={{color6 | rgb}}
-ForegroundNegative={{color9 | rgb}}
-ForegroundNeutral={{color14 | rgb}}
-ForegroundNormal=255,255,255
-ForegroundPositive={{color14 | rgb}}
-ForegroundVisited={{color14 | rgb}}
+BackgroundAlternate={{color0 | rgb}}
+BackgroundNormal={{background | rgb}}
+DecorationFocus={{cursor | rgb}}
+DecorationHover={{color4 | rgb}}
+ForegroundActive={{color0 | rgb}}
+ForegroundInactive={{color15 | rgb}}
+ForegroundLink={{cursor | rgb}}
+ForegroundNegative={{color1 | rgb}}
+ForegroundNeutral={{color2 | rgb}}
+ForegroundNormal={{foreground | rgb}}
+ForegroundPositive={{color6 | rgb}}
+ForegroundVisited={{color4 | rgb}}
 
 [Colors:Complementary]
 BackgroundAlternate={{color0 | rgb}}
-BackgroundNormal={{color0 | rgb}}
-DecorationFocus={{color12 | rgb}}
-DecorationHover={{color12 | rgb}}
-ForegroundActive={{color14 | rgb}}
-ForegroundInactive={{color7 | rgb}}
-ForegroundLink={{color6 | rgb}}
-ForegroundNegative={{color9 | rgb}}
-ForegroundNeutral={{color14 | rgb}}
-ForegroundNormal=255,255,255
-ForegroundPositive={{color14 | rgb}}
-ForegroundVisited={{color14 | rgb}}
+BackgroundNormal={{background | rgb}}
+DecorationFocus={{cursor | rgb}}
+DecorationHover={{color4 | rgb}}
+ForegroundActive={{color0 | rgb}}
+ForegroundInactive={{cursor | rgb}}
+ForegroundLink={{cursor | rgb}}
+ForegroundNegative={{color1 | rgb}}
+ForegroundNeutral={{color2 | rgb}}
+ForegroundNormal={{foreground | rgb}}
+ForegroundPositive={{color6 | rgb}}
+ForegroundVisited={{color4 | rgb}}
 
 [Colors:Selection]
-BackgroundAlternate={{color12 | rgb}}
-BackgroundNormal={{color12 | rgb}}
-DecorationFocus={{color12 | rgb}}
-DecorationHover={{color12 | rgb}}
-ForegroundActive={{color14 | rgb}}
-ForegroundInactive={{color7 | rgb}}
-ForegroundLink={{color6 | rgb}}
-ForegroundNegative={{color9 | rgb}}
-ForegroundNeutral={{color14 | rgb}}
-ForegroundNormal=255,255,255
-ForegroundPositive={{color14 | rgb}}
-ForegroundVisited={{color14 | rgb}}
+BackgroundAlternate={{color7 | rgb}}
+BackgroundNormal={{color7 | darken(0.2)}}
+DecorationFocus={{cursor | rgb}}
+DecorationHover={{color4 | rgb}}
+ForegroundActive={{color0 | rgb}}
+ForegroundInactive={{color15 | rgb}}
+ForegroundLink={{cursor | rgb}}
+ForegroundNegative={{color1 | rgb}}
+ForegroundNeutral={{color2 | rgb}}
+ForegroundNormal={{foreground | rgb}}
+ForegroundPositive={{color6 | rgb}}
+ForegroundVisited={{color4 | rgb}}
 
 [Colors:Tooltip]
-BackgroundAlternate={{color1 | rgb}}
-BackgroundNormal={{color1 | rgb}}
-DecorationFocus={{color12 | rgb}}
-DecorationHover={{color12 | rgb}}
-ForegroundActive={{color14 | rgb}}
-ForegroundInactive={{color7 | rgb}}
-ForegroundLink={{color6 | rgb}}
-ForegroundNegative={{color9 | rgb}}
-ForegroundNeutral={{color14 | rgb}}
-ForegroundNormal=255,255,255
-ForegroundPositive={{color14 | rgb}}
-ForegroundVisited={{color14 | rgb}}
+BackgroundAlternate={{color0 | rgb}}
+BackgroundNormal={{background | rgb}}
+DecorationFocus={{cursor | rgb}}
+DecorationHover={{color4 | rgb}}
+ForegroundActive={{color0 | rgb}}
+ForegroundInactive={{color15 | rgb}}
+ForegroundLink={{cursor | rgb}}
+ForegroundNegative={{color1 | rgb}}
+ForegroundNeutral={{color2 | rgb}}
+ForegroundNormal={{foreground | rgb}}
+ForegroundPositive={{color6 | rgb}}
+ForegroundVisited={{color4 | rgb}}
 
 [Colors:View]
 BackgroundAlternate={{color0 | rgb}}
-BackgroundNormal={{color0 | rgb}}
-DecorationFocus={{color12 | rgb}}
-DecorationHover={{color12 | rgb}}
-ForegroundActive={{color14 | rgb}}
-ForegroundInactive={{color7 | rgb}}
-ForegroundLink={{color6 | rgb}}
-ForegroundNegative={{color9 | rgb}}
-ForegroundNeutral={{color14 | rgb}}
-ForegroundNormal=255,255,255
-ForegroundPositive={{color14 | rgb}}
-ForegroundVisited={{color14 | rgb}}
+BackgroundNormal={{background | rgb}}
+DecorationFocus={{cursor | rgb}}
+DecorationHover={{color4 | rgb}}
+ForegroundActive={{color0 | rgb}}
+ForegroundInactive={{color15 | rgb}}
+ForegroundLink={{cursor | rgb}}
+ForegroundNegative={{color1 | rgb}}
+ForegroundNeutral={{color2 | rgb}}
+ForegroundNormal={{foreground | rgb}}
+ForegroundPositive={{color6 | rgb}}
+ForegroundVisited={{color4 | rgb}}
 
 [Colors:Window]
 BackgroundAlternate={{color0 | rgb}}
-BackgroundNormal={{color0 | rgb}}
-DecorationFocus={{color12 | rgb}}
-DecorationHover={{color12 | rgb}}
-ForegroundActive={{color14 | rgb}}
-ForegroundInactive={{color7 | rgb}}
-ForegroundLink={{color6 | rgb}}
-ForegroundNegative={{color12 | rgb}}
-ForegroundNeutral={{color9 | rgb}}
-ForegroundNormal=255,255,255
-ForegroundPositive={{color10 | rgb}}
-ForegroundVisited={{color14 | rgb}}
+BackgroundNormal={{background | rgb}}
+DecorationFocus={{cursor | rgb}}
+DecorationHover={{color4 | rgb}}
+ForegroundActive={{color0 | rgb}}
+ForegroundInactive={{color15 | rgb}}
+ForegroundLink={{cursor | rgb}}
+ForegroundNegative={{color1 | rgb}}
+ForegroundNeutral={{color2 | rgb}}
+ForegroundNormal={{foreground | rgb}}
+ForegroundPositive={{color6 | rgb}}
+ForegroundVisited={{color4 | rgb}}
 
 [General]
-ColorScheme=Pywal
-Name=Pywal
-TintFactor=0
-accentActiveTitlebar=false
-accentInactiveTitlebar=false
-shadeSortColumn=true
+Name=Wallust
+shadeSortColumn=false
 
 [KDE]
-contrast=4
+contrast=0
 
 [WM]
-activeBackground={{color0 | rgb}}
-activeBlend={{color0 | rgb}}
-activeForeground=255,255,255
-inactiveBackground={{color0 | rgb}}
-inactiveBlend={{color0 | rgb}}
-inactiveForeground={{color7 | rgb}}
+activeBackground={{background | rgb}}
+activeBlend={{foreground | rgb}}
+activeForeground={{foreground | rgb}}
+frame=156, 207, 217
+inactiveBackground={{background | rgb}}
+inactiveBlend={{background | rgb}}
+inactiveForeground={{foreground | rgb}}
+inactiveFrame=56,60,74
