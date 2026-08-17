@@ -6,9 +6,10 @@ spawn-at-startup "syncthing"
 // spawn-at-startup "swayidle"
 spawn-sh-at-startup "wl-paste --watch cliphist store &"
 {{ if eq .chezmoi.hostname "anura" }}
-spawn-sh-at-startup "vesktop"
-spawn-sh-at-startup "rm -r ~/.var/app/com.obsproject.Studio/config/obs-studio/.sentinel && flatpak run com.obsproject.Studio --startreplaybuffer --minimize-to-tray"
+spawn-sh-at-startup "sleep 1 && vesktop"
+spawn-sh-at-startup "rm -r ~/.var/app/com.obsproject.Studio/config/obs-studio/.sentinel && sleep 1 && flatpak run com.obsproject.Studio --startreplaybuffer --minimize-to-tray"
 spawn-at-startup "steam"
+spawn-at-startup "wivrn-server"
 {{ end }}
 spawn-at-startup "zen-browser"
 
@@ -86,6 +87,11 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // Window rules
 
 window-rule {
+    match at-startup=true
+    open-focused false
+}
+
+window-rule {
     match app-id="org.gnome.Nautilus" title="Open Files"
     match app-id="org.gnome.Nautilus" title="Choose a location to save the image"
     match app-id="org.gnome.Nautilus" title="Pick game to add"
@@ -128,6 +134,11 @@ window-rule {
     match app-id="vesktop"
     match app-id="fluxer_app"
     open-maximized true
+    open-on-workspace "chat"
+}
+
+window-rule {
+    match app-id="com.github.th-ch.youtube-music"
     open-on-workspace "chat"
 }
 
@@ -178,7 +189,7 @@ window-rule {
     match app-id="gamescope"
     match app-id="Minecraft"
     match app-id="^COBBLEVERSE$"
-    match title="Cyberpunk 2077"
+    match title="^Cyberpunk 2077 (C) 2020 by CD Projekt RED$"
     match title="^PEAK$"
     match title="^ARC Raiders$"
     match title="^Overwatch$"
@@ -218,19 +229,19 @@ layer-rule {
 }
 
 workspace "browser" {
-    open-on-output "DP-3"
+    open-on-output "DP-1"
 }
 workspace "chat" {
-open-on-output "DP-3"
+open-on-output "DP-1"
 }
 workspace "edit" {
-open-on-output "DP-3"
+open-on-output "DP-1"
 }
 workspace "misc" {
-open-on-output "DP-3"
+open-on-output "DP-1"
 }
 workspace "games" {
-open-on-output "DP-3"
+open-on-output "DP-1"
 }
 
 binds {
@@ -248,6 +259,7 @@ binds {
     Mod+Period hotkey-overlay-title="Edit Config" { spawn "kitty" "-d" "~/.local/share/chezmoi" "-e" "chezmoi" "edit" "--watch" "--apply"; }
     Mod+Shift+S { screenshot; }
     Mod+Apostrophe { spawn "kitty" "--title" "Window Picker" "--hold" "-e" "niri" "msg" "pick-window"; }
+    Mod+Semicolon { spawn-sh "hyprpicker | wl-copy"; }
     Mod+G { spawn-sh "~/Scripts/replay.sh"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
