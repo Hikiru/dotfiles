@@ -1,6 +1,20 @@
 {{ if eq .osid "linux-cachyos" -}}
 #!/usr/bin/env bash
 
+if [ !"$(type -p paru)" ]; then
+    echo "Paru not installed, installing it."
+    sudo pacman -S --needed base-devel rustup
+    rustup default stable
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si
+fi
+
+if [ !"$(type -p flatpak)" ]; then
+    echo "Flatpak not installed, installing it."
+    sudo pacman -S flatpak
+fi
+
 paru -Syu --needed {{ .packages.cachyos | join " " }}
 flatpak install {{ .packages.flatpak | join " " }}
 
