@@ -10,6 +10,13 @@ case $flatscreen in
     [yY] )
         echo "Installing flatscreen gaming packages..."
         paru -Syu --needed {{ .packages.gaming.flatscreen | join " " }}
+        echo "Opening Steam streaming ports"
+        sudo ufw allow 27031/udp
+        sudo ufw allow 27036/udp
+        sudo ufw allow 27036/tcp
+        sudo ufw allow 27037/tcp
+        sudo ufw allow 10400/udp
+        sudo ufw allow 10405/udp
         ;;
     [nN] )
         ;;
@@ -17,12 +24,15 @@ case $flatscreen in
         echo "Invalid response.";;
 esac
 
-read -p "Do you want to install VR gaming packages? (y/n) " vr
+read -p "Do you want to install WiVRn for VR streaming?? (y/n) " vr
 
 case $vr in
     [yY] )
-        echo "Installing VR gaming packages..."
+        echo "Installing WiVRn..."
         paru -Syu --needed {{ .packages.gaming.vr | join " " }}
+        echo "Opening WiVRn ports..."
+        ufw allow 5353/udp
+        ufw allow 9757
         ;;
     [nN] )
         ;;
