@@ -1,0 +1,462 @@
+# Umbriel default config
+# Copy this file to ~/.config/umbriel/config.toml to customize it.
+# Changes apply on save. See docs/user/ for the full reference.
+#
+# [include] merges extra files into this one. Included files are parsed first,
+# in list order (later files override earlier ones), then everything in this
+# file overrides all of them. That is why Noctalia's dynamic theming can render
+# its palette into a separate noctalia.toml and still let you override the
+# generated colors here.
+
+[include]
+files = ["colors.toml"]
+
+[general]
+autostart = [
+    "noctalia",
+    # "dms run",
+    "zen-browser || zen-beta",
+    "vesktop",
+    # "rm -r ~/.var/app/com.obsproject.Studio/config/obs-studio/.sentinel && sleep 1 && flatpak run com.obsproject.Studio --startreplaybuffer --minimize-to-tray",
+    "steam",
+    "wivrn-server",
+]
+# mod_key = "Super"            # Mod in keybinds; defaults to Super (Alt when nested)
+xwayland = true                # requires restart to change
+xwayland_native_resolution = true
+show_cheatsheet = false        # show keybinds overlay on startup
+focus_on_activate = false      # activation requests mark urgent without stealing focus
+honor_restored_maximize = false # let apps restore their saved maximized state
+
+[environment]
+QT_QPA_PLATFORMTHEME="qt6ct"
+OBS_VKCAPTURE="1"
+EDITOR="nvim"
+
+[workspaces]
+back_and_forth = false
+
+# Animation ------------------------------------------------------------------
+
+[animation]
+enabled = true
+duration_ms = 250              # 1-10000
+curve = "easeout"
+
+[animation.windows_in]
+enabled = true
+duration_ms = 150
+curve = "easeout"
+style = "popin"                # popin, zoom, slide, fade, none
+scale = 0.85                   # 0.1-1.0, used by popin
+
+[animation.windows_out]
+enabled = true
+duration_ms = 150
+curve = "easeout"
+style = "fade"                 # fade, slide
+
+[animation.windows_move]
+enabled = true
+duration_ms = 250
+curve = "snappy"
+
+[animation.workspaces]
+enabled = true
+duration_ms = 250
+curve = "easeout"
+
+[animation.overview]
+enabled = true
+duration_ms = 250
+curve = "easeout"
+
+[animation.scratchpad]
+enabled = false
+duration_ms = 250
+curve = "easeout"
+dim = 0.5                      # 0.0-1.0
+blur = false
+scale = 0.0                    # 0 preserves the window geometry
+maximize = false
+fullscreen = false
+
+[animation.border]
+enabled = false
+duration_ms = 250
+curve = "easeout"
+
+[animation.dim_unfocused]
+enabled = false
+duration_ms = 250
+curve = "easeout"
+dim = 0.0                      # 0.0-1.0
+
+[animation.layers]
+enabled = false
+duration_ms = 250
+curve = "easeout"
+
+# Appearance -----------------------------------------------------------------
+
+[appearance]
+prefer_no_csd = true
+border_width = 2               # 0-100
+outer_border_width = 0         # 0-100
+corner_radius = 10             # 0-100, radius of the final decorated outer edge
+drag_opacity = 0.75
+# border_focused = "#7AA3FFFF"
+# border_unfocused = "#292933FF"
+# scratchpad_border_focused = "#E5C07BFF"
+# scratchpad_border_unfocused = "#5C4A2AFF"
+# outer_border_color = "#1A1A1FFF"
+# insert_hint_color = "#7FC8FF80"
+# backdrop_color = "#000000FF"
+
+[appearance.blur]
+enabled = true
+optimized = true
+passes = 3                     # 0-8
+radius = 5                     # 0-100
+noise = 0.02                   # 0.0-1.0
+brightness = 0.9               # 0.0-2.0
+contrast = 0.9                 # 0.0-2.0
+saturation = 1.1               # 0.0-2.0
+
+[appearance.shadow]
+enabled = true
+softness = 10                  # 0-200, 0 = hard edge
+offset_x = 2                   # -200 to 200
+offset_y = 2
+
+# Overview -------------------------------------------------------------------
+
+[overview]
+zoom = 0.5                     # 0.1-0.75
+# background_blur = true        # blur the wallpaper while the overview is open
+# background_tint = "#10101430"
+# workspace_background = "#00000044" # set alpha to FF for an opaque background
+# shortcuts = true
+# shortcut_keys = "1234567890" # favorite keys in preference order
+# badge_color = "#7AA3FFFF"   # defaults to colors.accent_primary
+
+# Hot corners ---------------------------------------------------------------
+
+[hot_corners.top_left]
+enabled = true
+delay_ms = 100                # 0-10000, 0 activates immediately
+action = "overview-toggle"
+
+# Layout ---------------------------------------------------------------------
+
+[layout]
+mode = "scrolling"             # "scrolling", "dwindle", or "master"
+# Inspect every workspace's effective mode with `umbriel workspaces --json`.
+gap = 8                        # 0-500
+extent_presets = [0.333, 0.5, 0.667] # shared by scrolling, dwindle, and master
+
+[layout.scrolling]
+# Vertical workspaces stack horizontal lanes from top to bottom.
+# direction = "horizontal"
+default_extent_fraction = 0.5  # remove to let clients choose their initial extent
+center_underfull_strip = true  # center the strip whenever it is narrower than the viewport
+
+
+[layout.dwindle]
+# Keep each split direction fixed after it is created.
+# preserve_split = false
+[layout.master]
+position = "left"              # "left" or "right"
+default_width_fraction = 0.55  # 0.1-0.9
+
+# Workspace layout overrides (see docs/user/workspaces.md#workspace-rules)
+# [[workspace]]
+# name = "chat"
+# layout.mode = "dwindle"
+# layout.gap = 4
+# layout.scrolling.center_underfull_strip = false
+# layout.dwindle.preserve_split = true
+
+# Outputs (see docs/user/outputs.md) ----------------------------------------
+
+[output."DP-1"]
+mode = "2560x1440@240"
+# position = [0, 0]             # logical top-left; omit for automatic placement
+scale = 1.25                  # divides the mode size in layout coordinates
+vrr = "disabled"            # "disabled" (default), "always", or "fullscreen"
+# tearing = true                 # allow eligible fullscreen clients to request tearing
+# direct_scanout = true           # false forces composition on this output
+hdr = "off"                  # "off", "on", metadata-driven "auto", or any-app "fullscreen"
+sdr_white = 203                # SDR reference white in cd/m2 while HDR is active
+# enabled = true                # false removes it; re-enabling restores windows, layout, active workspace, and taskbar entries
+# Dynamic workspaces are the default; use a count or name list for static workspaces.
+workspaces = 5
+
+# Input ----------------------------------------------------------------------
+
+[input]
+middle_click_paste = true      # primary-selection clipboard, applies on reload
+
+[input.keyboard]
+# ASCII keybind fallback uses only layouts listed for this keyboard; a single
+# non-Latin layout has no implicit Latin fallback.
+layout = ""                    # "us,de" loads both; switch with keyboard-layout-next
+variant = ""
+options = ""                   # XKB options, e.g. "grp:alt_shift_toggle"
+repeat_rate = 25               # 0-1000 Hz
+repeat_delay = 600             # 0-10000 ms
+numlock_toggle = true # true enables NumLock when a keyboard connects; false leaves it off
+
+[input.touchpad]
+tap = true                      # enabled by default; false disables tap-to-click
+# natural_scroll = true
+# accel_profile = "adaptive"    # "flat", "adaptive", or "custom <step> <points...>"
+# sensitivity = 0.5             # pointer speed, -1.0 to 1.0
+# disable_while_typing = true   # omitted preserves the device's libinput default
+
+[input.mouse]
+# natural_scroll = false
+accel_profile = "flat"       # omitted preserves the device's libinput default
+sensitivity = 0.0              # pointer speed, -1.0 to 1.0
+scroll_wheel_step = 60         # 1-1000
+# Override only the listed settings for an exact, case-sensitive device name.
+# Applies per device kind: layout, variant, options, repeat_rate, and
+# repeat_delay to keyboards; tap and disable_while_typing to touchpads;
+# natural_scroll, accel_profile, and sensitivity to touchpads and mice.
+# Find names with `libinput list-devices`.
+# [[input.device]]
+# name = "Acme Precision Touchpad"
+# tap = true
+# natural_scroll = false
+# accel_profile = "flat"
+# sensitivity = 0.0
+# disable_while_typing = false
+# [[input.device]]
+# name = "Gaming Mouse"
+# accel_profile = "flat"
+# sensitivity = 0.0
+
+[input.tablet]
+enabled = true                 # false disables the tablet and its pads
+# map_to_output = "DP-1"       # confine the tablet area to one monitor
+# map_to_focused_output = false
+# map_to_focused_window = false  # pen area = focused window; wins over the output mappings
+# left_handed = false
+# calibration_matrix = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0]  # libinput calibration, 6 numbers
+
+[input.cursor]
+theme = "Adwaita"
+size = 24                      # 1-512
+hardware_cursor = true         # false forces software cursor composition
+follows_focus = false          # warp to windows selected by focus navigation
+hide_when_typing = false       # hide after typing unless a pointer button is held
+hide_timeout_ms = 0            # 0-3600000, 0 disables hiding
+
+[input.focus]
+follows_mouse = true
+# Refuse hover focus when revealing the window would scroll further than this,
+# measured in viewport extents (1.0 = one full screen). Omit for no limit.
+follows_mouse_max_scroll = 0.3
+
+# Keybinds (see docs/user/keybinds.md) --------------------------------------
+
+[keybinds]
+# Noctalia & DMS
+"Mod+D" = "spawn:noctalia msg panel-toggle launcher || dms ipc spotlight toggle"
+"Mod+Shift+S" = "spawn:noctalia msg screenshot-region || dms screenshot region"
+"Alt+Tab" = "spawn:noctalia msg window-switcher"
+
+"Mod+B" = "spawn:zen-browser || zen-beta"
+"Mod+E" = "spawn:nautilus"
+"Mod+Z" = "spawn:zeditor"
+"Mod+Shift+Z" = "spawn:kitty nvim"
+"Mod+Q" = "spawn:kitty"
+"Mod+W" = "overview-toggle"
+"Mod+Semicolon" = "spawn:hyprpicker | wl-copy"
+# "Mod+G" = "spawn:~/Scripts/replay.sh"
+# "Mod+G" = "spawn:noctalia msg plugin noctalia/screen_recorder:service all replay-save"
+"Ctrl+Alt+Delete" = "session-quit"
+
+"Mod+C" =       "window-close"
+"Mod+V" =       "window-toggle-floating"
+"Mod+P" =       "window-toggle-pinned"
+"Mod+Shift+V" = "window-focus-switch-floating"
+"Mod+Equal" =    "window-modify-primary-extent:+0.1"
+"Mod+Minus" =   "window-modify-primary-extent:-0.1"
+"Mod+R" =       "window-cycle-primary-extent"
+"Mod+Shift+R" = "window-cycle-secondary-extent"
+"Mod+Ctrl+R" =  "window-set-primary-extent:1"
+"Mod+F" =       "window-toggle-maximize"
+"Mod+Shift+F" = "window-toggle-maximize-to-edges"
+"Alt+Return" =  "window-toggle-fullscreen"
+
+"Mod+H" =       "window-focus-left"
+"Mod+J" =       "window-focus-down"
+"Mod+K" =       "window-focus-up"
+"Mod+L" =       "window-focus-right"
+"Mod+Left" =    "window-focus-left"
+"Mod+Down" =    "window-focus-down"
+"Mod+Up" =      "window-focus-up"
+"Mod+Right" =   "window-focus-right"
+"Mod+Shift+WheelUp" =   "window-focus-left"
+"Mod+Shift+WheelDown" = "window-focus-right"
+"Mod+WheelLeft" =       "window-focus-left"
+"Mod+WheelRight" =      "window-focus-right"
+"Mod+MouseBack" =       "window-focus-left"
+"Mod+MouseForward" =    "window-focus-right"
+"Mod+Home" =    "column-focus-first"
+"Mod+End" =     "column-focus-last"
+"Mod+Shift+H" =     "column-move-left"
+"Mod+Shift+J" =     "window-move-down"
+"Mod+Shift+K" =     "window-move-up"
+"Mod+Shift+L" =     "column-move-right"
+"Mod+Shift+Left" =  "column-move-left"
+"Mod+Shift+Down" =  "window-move-down"
+"Mod+Shift+Up" =    "window-move-up"
+"Mod+Shift+Right" = "column-move-right"
+"Mod+Shift+Home" =  "column-move-to-first"
+"Mod+Shift+End" =   "column-move-to-last"
+"Mod+BracketLeft" =  "window-consume-or-expel-left"
+"Mod+BracketRight" = "window-consume-or-expel-right"
+"Mod+S" =      "column-center"
+"Mod+Ctrl+S" = "window-center"
+
+"Mod+Space" =       "scratchpad-toggle"
+"Mod+Grave" =       "scratchpad-focus-next"
+"Mod+Shift+Space" = "window-move-to-scratchpad"
+"Mod+Ctrl+Space" =  "window-restore-from-scratchpad"
+
+"Mod+Tab" =       "workspace-focus-last"
+"Mod+U" =         "workspace-next"
+"Mod+I" =         "workspace-previous"
+"Mod+WheelDown" = "workspace-next"
+"Mod+WheelUp" =   "workspace-previous"
+"Mod+1" = "workspace-switch:1"
+"Mod+2" = "workspace-switch:2"
+"Mod+3" = "workspace-switch:3"
+"Mod+4" = "workspace-switch:4"
+"Mod+5" = "workspace-switch:5"
+"Mod+6" = "workspace-switch:6"
+"Mod+7" = "workspace-switch:7"
+"Mod+8" = "workspace-switch:8"
+"Mod+9" = "workspace-switch:9"
+"Mod+0" = "workspace-switch:10"
+"Mod+Shift+1" = "window-move-to-workspace:1"
+"Mod+Shift+2" = "window-move-to-workspace:2"
+"Mod+Shift+3" = "window-move-to-workspace:3"
+"Mod+Shift+4" = "window-move-to-workspace:4"
+"Mod+Shift+5" = "window-move-to-workspace:5"
+"Mod+Shift+6" = "window-move-to-workspace:6"
+"Mod+Shift+7" = "window-move-to-workspace:7"
+"Mod+Shift+8" = "window-move-to-workspace:8"
+"Mod+Shift+9" = "window-move-to-workspace:9"
+"Mod+Shift+0" = "window-move-to-workspace:10"
+# "Mod+Shift+O" = "dpms-off"        # new input wakes displays after all are off
+# "Mod+Ctrl+O" = "dpms-off:DP-1"   # stays off while another display is awake
+
+# Media and volume (see docs/user/keybinds.md#example-media-and-brightness-keys)
+"XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+"XF86AudioLowerVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+"XF86AudioMute"   = "spawn:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+"XF86AudioPlay"       = "spawn:playerctl play-pause"
+"XF86AudioNext"       = "spawn:playerctl next"
+"XF86AudioPrev"       = "spawn:playerctl prev"
+# Controls intended to remain usable while the session is locked use the table form.
+"XF86MonBrightnessDown" = { action = "spawn:noctalia msg brightness-down 10", allow_when_locked = true }
+"XF86MonBrightnessUp" =   { action = "spawn:noctalia msg brightness-up 10", allow_when_locked = true }
+
+# Window rules
+
+[[window_rule]]
+blur = true
+blur_optimized = true
+
+[[window_rule]]
+match.app_id = "^zen$"
+default_maximize = true
+default_workspace = 1
+
+[[window_rule]]
+match.app_id = "^zen$"
+match.title = "^Picture-in-Picture$"
+default_focused = false
+default_maximize = false
+default_floating = true
+default_pinned = true
+default_position = { x = 8, y = 8, anchor = "bottom_right" }
+default_floating_size = { width = 0.25, height = 0.258 } # height slightly higher to account for the space the bar takes
+
+[[window_rule]]
+match.app_id = "^zen$"
+match.title = "^Extension: (Bitwarden Password Manager) - Bitwarden.*$"
+default_maximize = false
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^vesktop$"
+default_focused = false
+default_maximize = true
+default_workspace = 2
+
+[[window_rule]]
+match.app_id = "^dev.zed.Zed$"
+default_maximize = true
+default_workspace = 3
+
+[[window_rule]]
+match.app_id = "^steam$"
+match.title = "^Steam$|^Sign in to Steam$"
+default_focused = false
+default_maximize = true
+default_workspace = 5
+
+[[window_rule]]
+match.title = "^notificationtoasts_.+_desktop"
+default_position = { x = 0, y = 0, anchor = "bottom_right" }
+default_focused = false
+default_pinned = true
+
+[[window_rule]]
+match.content_type = "game"
+vrr = "always"
+default_floating = false
+default_fullscreen = true
+default_workspace = 5
+
+[[window_rule]]
+match.app_id = "^steam_app_.*$|^BeamNG.drive$|^captureplayer$"
+vrr = "always"
+default_floating = false
+default_fullscreen = true
+default_workspace = 5
+
+[[window_rule]]
+match.title = "^Forza Horizon 6$"
+vrr = "always"
+default_floating = false
+default_fullscreen = true
+default_workspace = 5
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.Noctalia$"
+default_floating = true
+default_floating_size_px = { width = 1020, height = 900 }
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.UmbrielSharePicker$"
+default_floating = true
+default_floating_size_px = { width = 800, height = 600 }
+
+# Layer rules
+
+[[layer_rule]]
+match.namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+blur = true
+blur_ignore_alpha = 0.5
+blur_optimized = false
+
+[[layer_rule]]
+match.namespace="^dms:.*$"
+blur = true
+blur_ignore_alpha = 0.5
+blur_optimized = false
