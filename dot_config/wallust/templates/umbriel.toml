@@ -1,0 +1,16 @@
+[colors]
+background = "{{background}}"
+text_primary = "{{foreground}}"
+text_muted = "{{color15}}"
+accent_primary = "{{cursor}}"
+accent_secondary = "{{color3}}"
+warning = "{{color3}}"
+error = "{{color1}}"
+insert_hint = "{{color4}}80"
+backdrop = "#000000FF"
+shadow = "#0000007F"
+
+[colors.border]
+focused = "{{cursor}}"
+unfocused = "{{color8}}"
+outer = "{{color0}}"

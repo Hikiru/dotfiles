@@ -41,6 +41,7 @@ palettum = { template = 'palettum.json', target = '~/.config/palettum/Wallust.js
 plasma = { template = 'plasma.colors', target = '~/.local/share/color-schemes/Wallust.colors' }
 qt5ct = { template = 'qtct.conf', target = '~/.config/qt5ct/colors/wallust.conf' }
 qt6ct = { template = 'qtct.conf', target = '~/.config/qt6ct/colors/wallust.conf' }
+umbriel = { template = 'umbriel.toml', target = '~/.config/umbriel/colors.toml' }
 vesktop = { template = 'discord.css', target = '~/.config/vesktop/themes/wallust.css' }
 youtube-music = { template = 'youtube-music.css', target = '~/.config/YouTube Music/wallust.css' }
 zed = { template = 'zed.json', target = '~/.config/zed/themes/wallust.json' }
