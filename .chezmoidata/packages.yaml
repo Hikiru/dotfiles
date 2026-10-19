@@ -2,6 +2,7 @@ packages:
   cachyos:
     # Compositor/shell
     - 'niri'
+    - 'umbriel'
     - 'dms-shell'
     - 'cava'
     - 'dankcalendar'
@@ -11,6 +12,7 @@ packages:
 
     # Essentials
     - 'zen-browser'
+    - 'helium-browser-bin'
     - 'nautilus'
     - 'file-roller'
     - 'xdg-user-dirs'
@@ -95,11 +97,8 @@ packages:
       - 'sunshine'
       - 'moonlight-qt'
     vr:
-      - 'wivrn-dashboard' # AUR
-      - 'wivrn-server' # AUR
+      - 'wivrn-full-git' # AUR
       - 'wayvr' # AUR
-      - 'xrizer' # AUR
-      - 'lib32-xrizer ' # AUR
 
   flatpak:
     - 'com.obsproject.Studio'
