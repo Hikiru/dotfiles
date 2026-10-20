@@ -4,6 +4,7 @@ packages:
     - 'niri'
     - 'umbriel'
     - 'dms-shell'
+    - 'noctalia'
     - 'cava'
     - 'dankcalendar'
     - 'dgop'
@@ -19,7 +20,6 @@ packages:
     - 'xdg-user-dirs-gtk'
     - 'ffmpegthumbnailer'
     - 'unzip'
-    - 'gnome-software'
     - 'loupe'
     - 'celluloid'
     - 'chezmoi'
@@ -67,6 +67,7 @@ packages:
     - 'playerctl'
 
     # Audio/video
+    - 'gpu-screen-recorder-ui'
     - 'vlc'
     - 'easyeffects'
     - 'video-trimmer'
@@ -101,6 +102,7 @@ packages:
       - 'wayvr' # AUR
 
   flatpak:
+    - 'io.github.kolunmi.Bazaar'
     - 'com.obsproject.Studio'
     - 'com.obsproject.Studio.Plugin.OBSVkCapture'
     - 'io.github.wartybix.Constrict'
@@ -110,3 +112,4 @@ packages:
     - 'it.mijorus.gearlever'
     - 'com.spotify.Client'
     - 'com.steamgriddb.SGDBoop'
+    - 'com.stremio.Stremio'
