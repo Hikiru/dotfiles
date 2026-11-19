@@ -26,13 +26,10 @@ if [[ -n $1 ]]; then
     dms ipc wallpaper set ~/Pictures/Wallpapers/$1/"$(ls ~/Pictures/Wallpapers/$1/ | head -n 1)"
 fi
 
-if [[ $nostartbrowser -eq false ]]; then
-    niri msg action spawn -- zen-browser
-    echo ahh
-else
-    echo ahhhh
-fi
-niri msg action spawn -- easyeffects
-if [[ $YTM -eq true ]]; then
-    niri msg action spawn -- pear-desktop
-fi
+# if [[ $nostartbrowser -eq false ]]; then
+#     niri msg action spawn -- zen-browser
+# fi
+# niri msg action spawn -- easyeffects
+# if [[ $YTM -eq true ]]; then
+#     niri msg action spawn -- pear-desktop
+# fi

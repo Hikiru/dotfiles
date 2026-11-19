@@ -1,3 +1,4 @@
 export QT_QPA_PLATFORMTHEME="qt6ct"
 export OBS_VKCAPTURE=1
+export EDITOR=nvim
 export PATH="~/Scripts:$PATH"

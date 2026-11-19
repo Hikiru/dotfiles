@@ -13,25 +13,22 @@ files = ["colors.toml"]
 
 [general]
 autostart = [
-    "noctalia",
-    # "dms run",
-    "zen-browser || zen-beta",
+    # "noctalia",
+    "dms run",
+    # "zen-browser || zen-beta",
     "vesktop",
     # "rm -r ~/.var/app/com.obsproject.Studio/config/obs-studio/.sentinel && sleep 1 && flatpak run com.obsproject.Studio --startreplaybuffer --minimize-to-tray",
     "steam",
     "wivrn-server",
+    "sunshine",
+    "gsr-ui launch-hide",
 ]
 # mod_key = "Super"            # Mod in keybinds; defaults to Super (Alt when nested)
 xwayland = true                # requires restart to change
 xwayland_native_resolution = true
 show_cheatsheet = false        # show keybinds overlay on startup
-focus_on_activate = false      # activation requests mark urgent without stealing focus
+focus_on_activate = true      # activation requests mark urgent without stealing focus
 honor_restored_maximize = false # let apps restore their saved maximized state
-
-[environment]
-QT_QPA_PLATFORMTHEME="qt6ct"
-OBS_VKCAPTURE="1"
-EDITOR="nvim"
 
 [workspaces]
 back_and_forth = false
@@ -77,9 +74,6 @@ duration_ms = 250
 curve = "easeout"
 dim = 0.5                      # 0.0-1.0
 blur = false
-scale = 0.0                    # 0 preserves the window geometry
-maximize = false
-fullscreen = false
 
 [animation.border]
 enabled = false
@@ -105,13 +99,6 @@ border_width = 2               # 0-100
 outer_border_width = 0         # 0-100
 corner_radius = 10             # 0-100, radius of the final decorated outer edge
 drag_opacity = 0.75
-# border_focused = "#7AA3FFFF"
-# border_unfocused = "#292933FF"
-# scratchpad_border_focused = "#E5C07BFF"
-# scratchpad_border_unfocused = "#5C4A2AFF"
-# outer_border_color = "#1A1A1FFF"
-# insert_hint_color = "#7FC8FF80"
-# backdrop_color = "#000000FF"
 
 [appearance.blur]
 enabled = true
@@ -192,10 +179,13 @@ sdr_white = 203                # SDR reference white in cd/m2 while HDR is activ
 # Dynamic workspaces are the default; use a count or name list for static workspaces.
 workspaces = 5
 
+[output."sunshine"]
+scale = 1.75
+
 # Input ----------------------------------------------------------------------
 
 [input]
-middle_click_paste = true      # primary-selection clipboard, applies on reload
+middle_click_paste = false      # primary-selection clipboard, applies on reload
 
 [input.keyboard]
 # ASCII keybind fallback uses only layouts listed for this keyboard; a single
@@ -253,7 +243,7 @@ hide_when_typing = false       # hide after typing unless a pointer button is he
 hide_timeout_ms = 0            # 0-3600000, 0 disables hiding
 
 [input.focus]
-follows_mouse = true
+follows_mouse = "sloppy"
 # Refuse hover focus when revealing the window would scroll further than this,
 # measured in viewport extents (1.0 = one full screen). Omit for no limit.
 follows_mouse_max_scroll = 0.3
@@ -262,30 +252,32 @@ follows_mouse_max_scroll = 0.3
 
 [keybinds]
 # Noctalia & DMS
-"Mod+D" = "spawn:noctalia msg panel-toggle launcher || dms ipc spotlight toggle"
-"Mod+Shift+S" = "spawn:noctalia msg screenshot-region || dms screenshot region"
-"Alt+Tab" = "spawn:noctalia msg window-switcher"
+"Mod+D" = "spawn noctalia msg panel-toggle launcher || dms ipc spotlight toggle"
+"Mod+Shift+S" = "spawn noctalia msg screenshot-region || dms screenshot region"
+"Alt+Tab" = "spawn noctalia msg window-switcher"
+"Mod+Escape" = "spawn dms ipc powermenu toggle"
 
-"Mod+B" = "spawn:zen-browser || zen-beta"
-"Mod+E" = "spawn:nautilus"
-"Mod+Z" = "spawn:zeditor"
-"Mod+Shift+Z" = "spawn:kitty nvim"
-"Mod+Q" = "spawn:kitty"
+# "Mod+B" = "spawn zen-browser || zen-beta"
+"Mod+B" = "spawn brave-origin"
+"Mod+E" = "spawn dfiles"
+"Mod+Z" = "spawn zeditor"
+"Mod+Shift+Z" = "spawn kitty nvim"
+"Mod+Q" = "spawn kitty"
 "Mod+W" = "overview-toggle"
-"Mod+Semicolon" = "spawn:hyprpicker | wl-copy"
-# "Mod+G" = "spawn:~/Scripts/replay.sh"
-# "Mod+G" = "spawn:noctalia msg plugin noctalia/screen_recorder:service all replay-save"
+"Mod+Semicolon" = "spawn hyprpicker | wl-copy"
+# "Mod+G" = "spawn ~/Scripts/replay.sh"
+# "Mod+G" = "spawn noctalia msg plugin noctalia/screen_recorder:service all replay-save"
 "Ctrl+Alt+Delete" = "session-quit"
 
 "Mod+C" =       "window-close"
 "Mod+V" =       "window-toggle-floating"
 "Mod+P" =       "window-toggle-pinned"
 "Mod+Shift+V" = "window-focus-switch-floating"
-"Mod+Equal" =    "window-modify-primary-extent:+0.1"
-"Mod+Minus" =   "window-modify-primary-extent:-0.1"
+"Mod+Equal" =   "window-modify-primary-extent +0.1"
+"Mod+Minus" =   "window-modify-primary-extent -0.1"
 "Mod+R" =       "window-cycle-primary-extent"
 "Mod+Shift+R" = "window-cycle-secondary-extent"
-"Mod+Ctrl+R" =  "window-set-primary-extent:1"
+"Mod+Ctrl+R" =  "window-set-primary-extent 1"
 "Mod+F" =       "window-toggle-maximize"
 "Mod+Shift+F" = "window-toggle-maximize-to-edges"
 "Alt+Return" =  "window-toggle-fullscreen"
@@ -323,7 +315,7 @@ follows_mouse_max_scroll = 0.3
 
 "Mod+Space" =       "scratchpad-toggle"
 "Mod+Grave" =       "scratchpad-focus-next"
-"Mod+Shift+Space" = "window-move-to-scratchpad"
+"Mod+Shift+Space" = "spawn umbriel msg column-center && sleep 0.25 && umbriel msg window-move-to-scratchpad"
 "Mod+Ctrl+Space" =  "window-restore-from-scratchpad"
 
 "Mod+Tab" =       "workspace-focus-last"
@@ -331,39 +323,46 @@ follows_mouse_max_scroll = 0.3
 "Mod+I" =         "workspace-previous"
 "Mod+WheelDown" = "workspace-next"
 "Mod+WheelUp" =   "workspace-previous"
-"Mod+1" = "workspace-switch:1"
-"Mod+2" = "workspace-switch:2"
-"Mod+3" = "workspace-switch:3"
-"Mod+4" = "workspace-switch:4"
-"Mod+5" = "workspace-switch:5"
-"Mod+6" = "workspace-switch:6"
-"Mod+7" = "workspace-switch:7"
-"Mod+8" = "workspace-switch:8"
-"Mod+9" = "workspace-switch:9"
-"Mod+0" = "workspace-switch:10"
-"Mod+Shift+1" = "window-move-to-workspace:1"
-"Mod+Shift+2" = "window-move-to-workspace:2"
-"Mod+Shift+3" = "window-move-to-workspace:3"
-"Mod+Shift+4" = "window-move-to-workspace:4"
-"Mod+Shift+5" = "window-move-to-workspace:5"
-"Mod+Shift+6" = "window-move-to-workspace:6"
-"Mod+Shift+7" = "window-move-to-workspace:7"
-"Mod+Shift+8" = "window-move-to-workspace:8"
-"Mod+Shift+9" = "window-move-to-workspace:9"
-"Mod+Shift+0" = "window-move-to-workspace:10"
+"Mod+1" = "workspace-switch 1"
+"Mod+2" = "workspace-switch 2"
+"Mod+3" = "workspace-switch 3"
+"Mod+4" = "workspace-switch 4"
+"Mod+5" = "workspace-switch 5"
+"Mod+6" = "workspace-switch 6"
+"Mod+7" = "workspace-switch 7"
+"Mod+8" = "workspace-switch 8"
+"Mod+9" = "workspace-switch 9"
+"Mod+0" = "workspace-switch 10"
+"Mod+Shift+1" = "window-move-to-workspace 1"
+"Mod+Shift+2" = "window-move-to-workspace 2"
+"Mod+Shift+3" = "window-move-to-workspace 3"
+"Mod+Shift+4" = "window-move-to-workspace 4"
+"Mod+Shift+5" = "window-move-to-workspace 5"
+"Mod+Shift+6" = "window-move-to-workspace 6"
+"Mod+Shift+7" = "window-move-to-workspace 7"
+"Mod+Shift+8" = "window-move-to-workspace 8"
+"Mod+Shift+9" = "window-move-to-workspace 9"
+"Mod+Shift+0" = "window-move-to-workspace 10"
 # "Mod+Shift+O" = "dpms-off"        # new input wakes displays after all are off
 # "Mod+Ctrl+O" = "dpms-off:DP-1"   # stays off while another display is awake
 
 # Media and volume (see docs/user/keybinds.md#example-media-and-brightness-keys)
-"XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-"XF86AudioLowerVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-"XF86AudioMute"   = "spawn:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-"XF86AudioPlay"       = "spawn:playerctl play-pause"
-"XF86AudioNext"       = "spawn:playerctl next"
-"XF86AudioPrev"       = "spawn:playerctl prev"
+"XF86AudioRaiseVolume" = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+"XF86AudioLowerVolume" = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+"XF86AudioMute"   = "spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+"XF86AudioPlay"       = "spawn playerctl play-pause"
+"XF86AudioNext"       = "spawn playerctl next"
+"XF86AudioPrev"       = "spawn playerctl prev"
 # Controls intended to remain usable while the session is locked use the table form.
-"XF86MonBrightnessDown" = { action = "spawn:noctalia msg brightness-down 10", allow_when_locked = true }
-"XF86MonBrightnessUp" =   { action = "spawn:noctalia msg brightness-up 10", allow_when_locked = true }
+"XF86MonBrightnessDown" = { action = "spawn noctalia msg brightness-down 10", allow_when_locked = true }
+"XF86MonBrightnessUp" =   { action = "spawn noctalia msg brightness-up 10", allow_when_locked = true }
+
+# HDR toggler
+"Mod+Alt+B" = '''spawn if [ $(umbriel config get output.DP-1.hdr) = "off" ]; then
+umbriel config set output.DP-1.hdr \"on\"
+elif [ $(umbriel config get output.DP-1.hdr) = "on" ]; then
+umbriel config set output.DP-1.hdr \"off\"
+fi'''
 
 # Window rules
 
@@ -371,14 +370,15 @@ follows_mouse_max_scroll = 0.3
 blur = true
 blur_optimized = true
 
+# browsers
 [[window_rule]]
-match.app_id = "^zen$"
+match.app_id = "^zen$|^trivalent$|^helium$|^brave-origin$"
 default_maximize = true
 default_workspace = 1
 
 [[window_rule]]
-match.app_id = "^zen$"
-match.title = "^Picture-in-Picture$"
+match.app_id = "^zen$|^trivalent$|^helium$|^brave-origin$"
+match.title = "^Picture-in-Picture$|^Picture in picture$"
 default_focused = false
 default_maximize = false
 default_floating = true
@@ -404,6 +404,10 @@ default_maximize = true
 default_workspace = 3
 
 [[window_rule]]
+match.app_id="^com-nuvio-app-MainKt$"
+default_workspace = 4
+
+[[window_rule]]
 match.app_id = "^steam$"
 match.title = "^Steam$|^Sign in to Steam$"
 default_focused = false
@@ -414,7 +418,7 @@ default_workspace = 5
 match.title = "^notificationtoasts_.+_desktop"
 default_position = { x = 0, y = 0, anchor = "bottom_right" }
 default_focused = false
-default_pinned = true
+# default_pinned = true
 
 [[window_rule]]
 match.content_type = "game"
@@ -424,7 +428,7 @@ default_fullscreen = true
 default_workspace = 5
 
 [[window_rule]]
-match.app_id = "^steam_app_.*$|^BeamNG.drive$|^captureplayer$"
+match.app_id = "^steam_app_.*$|^BeamNG.drive$|^captureplayer$|^Minecraft.*$"
 vrr = "always"
 default_floating = false
 default_fullscreen = true
@@ -438,7 +442,7 @@ default_fullscreen = true
 default_workspace = 5
 
 [[window_rule]]
-match.app_id = "^dev.noctalia.Noctalia$"
+match.app_id = "^dev.noctalia.Noctalia$|dev.duxlabs.shell"
 default_floating = true
 default_floating_size_px = { width = 1020, height = 900 }
 

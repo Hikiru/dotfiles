@@ -23,6 +23,8 @@ packages:
     - 'loupe'
     - 'celluloid'
     - 'chezmoi'
+    - 'fuse2'
+    - 'fuse3'
 
     # Theming
     - 'wallust' # AUR

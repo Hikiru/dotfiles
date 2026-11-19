@@ -7,11 +7,10 @@ spawn-at-startup "syncthing"
 spawn-sh-at-startup "wl-paste --watch cliphist store &"
 {{ if eq .chezmoi.hostname "anura" }}
 spawn-sh-at-startup "sleep 1 && vesktop"
-spawn-sh-at-startup "rm -r ~/.var/app/com.obsproject.Studio/config/obs-studio/.sentinel && sleep 1 && flatpak run com.obsproject.Studio --startreplaybuffer --minimize-to-tray"
+// spawn-sh-at-startup "rm -r ~/.var/app/com.obsproject.Studio/config/obs-studio/.sentinel && sleep 1 && flatpak run com.obsproject.Studio --startreplaybuffer --minimize-to-tray"
 spawn-at-startup "steam"
 spawn-at-startup "wivrn-server"
 {{ end }}
-spawn-at-startup "zen-browser"
 
 environment {
     QT_QPA_PLATFORMTHEME "qt6ct"
@@ -54,7 +53,7 @@ window-rule {
 prefer-no-csd
 
 include "colors.kdl"
-include "dms/layout.kdl"
+// include "dms/layout.kdl"
 
 layout {
     gaps 8
@@ -423,6 +422,6 @@ hotkey-overlay {
     skip-at-startup
 }
 
-include "dms/cursor.kdl"
+// include "dms/cursor.kdl"
 
-include "dms/outputs.kdl"
+// include "dms/outputs.kdl"
