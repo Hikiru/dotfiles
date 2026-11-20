@@ -1,0 +1,22 @@
+{
+  "name": "Wallust",
+  "primary": "#C4A7E7",
+  "primaryText": "#191724",
+  "primaryContainer": "#26233A",
+  "secondary": "#F6C177",
+  "surface": "#191724",
+  "surfaceText": "#C4A7E7",
+  "surfaceVariant": "#1F1D2E",
+  "surfaceVariantText": "#908CAA",
+  "surfaceTint": "#C4A7E7",
+  "background": "#191724",
+  "backgroundText": "#E0DEF4",
+  "outline": "#C4A7E7",
+  "surfaceContainer": "#1F1D2E",
+  "surfaceContainerHigh": "#26233A",
+  "surfaceContainerHighest": "#3C394E",
+  "error": "#EB6F92",
+  "warning": "#F6C177",
+  "info": "#9CCFD8",
+  "matugen_type": "scheme-expressive"
+}

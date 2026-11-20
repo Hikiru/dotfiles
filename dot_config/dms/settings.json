@@ -1,7 +1,7 @@
 {
   "currentThemeName": "custom",
   "currentThemeCategory": "custom",
-  "customThemeFile": "/home/hikiru/.config/DankMaterialShell/themes/colors.json",
+  "customThemeFile": "/home/hikiru/.config/dms/themes/colors.json",
   "matugenScheme": "scheme-tonal-spot",
   "runUserMatugenTemplates": false,
   "widgetBackgroundColor": "sth",
