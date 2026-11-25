@@ -312,6 +312,7 @@ follows_mouse_max_scroll = 0.3
 "Mod+BracketRight" = "window-consume-or-expel-right"
 "Mod+S" =      "column-center"
 "Mod+Ctrl+S" = "window-center"
+"Mod+Apostrophe" = 'spawn ghostty '
 
 "Mod+Space" =       "scratchpad-toggle"
 "Mod+Grave" =       "scratchpad-focus-next"
@@ -418,7 +419,8 @@ default_workspace = 5
 match.title = "^notificationtoasts_.+_desktop"
 default_position = { x = 0, y = 0, anchor = "bottom_right" }
 default_focused = false
-# default_pinned = true
+default_pinned = true
+default_floating_size_px = { width = 283, height = 70 }
 
 [[window_rule]]
 match.content_type = "game"
@@ -428,7 +430,7 @@ default_fullscreen = true
 default_workspace = 5
 
 [[window_rule]]
-match.app_id = "^steam_app_.*$|^BeamNG.drive$|^captureplayer$|^Minecraft.*$"
+match.app_id = "^steam_app_.*[^default]$|^BeamNG.drive$|^captureplayer$|^Minecraft.*$"
 vrr = "always"
 default_floating = false
 default_fullscreen = true
